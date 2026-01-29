@@ -21,6 +21,7 @@
             --ink-gray: #1a1a1a;
             --ink-lighter: #2a2a2a;
             --paper: #faf8f5;
+            --gold: #d4af37;
         }
 
         * {
@@ -39,6 +40,7 @@
             color: var(--paper);
             line-height: 1.8;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         /* Header */
@@ -103,15 +105,20 @@
         }
 
         /* Main Content */
+        .main-wrapper {
+            width: 100%;
+            padding: 0 2rem;
+        }
+
         main {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 8rem 2rem 4rem;
+            padding: 7rem 0 4rem;
         }
 
         .page-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             padding-bottom: 2rem;
             border-bottom: 1px solid rgba(102,255,0,0.2);
         }
@@ -140,7 +147,7 @@
         .info-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
             background: var(--ink-gray);
             border-radius: 8px;
             overflow: hidden;
@@ -156,7 +163,7 @@
 
         .info-table th,
         .info-table td {
-            padding: 1.2rem 1.5rem;
+            padding: 1rem 1.2rem;
             text-align: left;
             font-size: 0.95rem;
             vertical-align: top;
@@ -167,7 +174,6 @@
             background: rgba(102,255,0,0.08);
             color: var(--bright-green);
             font-weight: 500;
-            border-right: 1px solid rgba(102,255,0,0.2);
         }
 
         .info-table td {
@@ -191,19 +197,27 @@
             text-decoration: underline;
         }
 
+        .info-table td small {
+            color: rgba(250,248,245,0.5);
+        }
+
+        .info-table td strong {
+            color: var(--bright-green);
+        }
+
         /* Note Section */
         .note-section {
             background: var(--ink-dark);
             border: 1px solid rgba(102,255,0,0.2);
             border-radius: 8px;
-            padding: 1.5rem;
-            margin-top: 2rem;
+            padding: 1.2rem 1.5rem;
+            margin-top: 1.5rem;
         }
 
         .note-section h3 {
-            color: var(--bright-green);
+            color: var(--gold);
             font-size: 0.95rem;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -216,6 +230,16 @@
         .note-section p {
             color: rgba(250,248,245,0.7);
             font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .note-section a {
+            color: var(--bright-green);
+            text-decoration: none;
+        }
+
+        .note-section a:hover {
+            text-decoration: underline;
         }
 
         /* Update Date */
@@ -233,15 +257,18 @@
             background: var(--ink-dark);
             border-top: 1px solid rgba(102,255,0,0.1);
             padding: 3rem 2rem;
-            margin-top: 4rem;
+            margin-top: 2rem;
+        }
+
+        .footer-inner {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .footer-content {
-            max-width: 900px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             flex-wrap: wrap;
             gap: 2rem;
         }
@@ -263,8 +290,9 @@
 
         .footer-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             list-style: none;
+            flex-wrap: wrap;
         }
 
         .footer-links a {
@@ -279,9 +307,8 @@
         }
 
         .footer-bottom {
-            max-width: 900px;
-            margin: 2rem auto 0;
-            padding-top: 2rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
             border-top: 1px solid rgba(250,248,245,0.1);
             text-align: center;
             color: rgba(250,248,245,0.3);
@@ -294,8 +321,20 @@
                 display: none;
             }
 
+            header {
+                padding: 0.8rem 1rem;
+            }
+
+            .main-wrapper {
+                padding: 0 1rem;
+            }
+
+            main {
+                padding: 6rem 0 3rem;
+            }
+
             .page-title {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
 
             .info-table th,
@@ -305,23 +344,26 @@
             }
 
             .info-table th {
-                border-right: none;
-                border-bottom: 1px solid rgba(102,255,0,0.2);
-                padding-bottom: 0.8rem;
+                padding-bottom: 0.5rem;
             }
 
             .info-table td {
-                padding-top: 0.8rem;
+                padding-top: 0.5rem;
+                padding-bottom: 1rem;
             }
 
             .footer-content {
                 flex-direction: column;
+                align-items: center;
                 text-align: center;
             }
 
             .footer-links {
-                flex-wrap: wrap;
                 justify-content: center;
+            }
+
+            footer {
+                padding: 2rem 1rem;
             }
         }
     </style>
@@ -341,144 +383,148 @@
         </nav>
     </header>
 
-    <main>
-        <div class="page-header">
-            <p class="page-label">Legal Notice</p>
-            <h1 class="page-title">特定商取引法に基づく表記</h1>
-            <p class="page-subtitle">FUSION AI for Biz サービスについて</p>
-        </div>
+    <div class="main-wrapper">
+        <main>
+            <div class="page-header">
+                <p class="page-label">Legal Notice</p>
+                <h1 class="page-title">特定商取引法に基づく表記</h1>
+                <p class="page-subtitle">FUSION AI for Biz サービスについて</p>
+            </div>
 
-        <table class="info-table">
-            <tr>
-                <th>販売事業者</th>
-                <td>Aixeed株式会社</td>
-            </tr>
-            <tr>
-                <th>代表責任者</th>
-                <td>代表取締役 [氏名]</td>
-            </tr>
-            <tr>
-                <th>所在地</th>
-                <td>〒000-0000 東京都○○区○○ 0-0-0</td>
-            </tr>
-            <tr>
-                <th>電話番号</th>
-                <td>03-0000-0000<br><small style="color: rgba(250,248,245,0.5);">※お問い合わせはメールまたはフォームにてお願いいたします</small></td>
-            </tr>
-            <tr>
-                <th>メールアドレス</th>
-                <td>info@aixeed.co.jp</td>
-            </tr>
-            <tr>
-                <th>Webサイト</th>
-                <td><a href="index.html">https://aixeed.co.jp</a></td>
-            </tr>
-            <tr>
-                <th>販売価格</th>
-                <td>
-                    <strong style="color: var(--bright-green);">年間利用料：¥350,000/人（税別）</strong><br>
-                    <small style="color: rgba(250,248,245,0.6);">※2名以上の法人様からご利用いただけます</small><br>
-                    <small style="color: rgba(250,248,245,0.6);">※個別研修（特別編）は別途お見積り</small>
-                </td>
-            </tr>
-            <tr>
-                <th>販売価格以外の必要料金</th>
-                <td>
-                    <ul>
-                        <li>消費税（税率10%）</li>
-                        <li>銀行振込の場合の振込手数料</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th>支払方法</th>
-                <td>
-                    <ul>
-                        <li>銀行振込（前払い）</li>
-                        <li>クレジットカード決済（VISA / Mastercard / JCB / American Express）</li>
-                        <li>請求書払い（法人様のみ、審査あり）</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th>支払時期</th>
-                <td>
-                    <ul>
-                        <li>銀行振込：お申し込みから14日以内</li>
-                        <li>クレジットカード：お申し込み時に決済</li>
-                        <li>請求書払い：請求書発行日から月末締め翌月末払い</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th>サービス提供時期</th>
-                <td>お支払い確認後、3営業日以内にアカウント発行・受講開始</td>
-            </tr>
-            <tr>
-                <th>サービス提供方法</th>
-                <td>
-                    <ul>
-                        <li>LMS（Learning Management System）による動画配信</li>
-                        <li>オンラインワークショップ（Zoom等を使用）</li>
-                        <li>メール・チャットによる質問対応</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th>動作環境</th>
-                <td>
-                    <strong>推奨環境：</strong>
-                    <ul>
-                        <li>OS：Windows 10以降 / macOS 10.15以降</li>
-                        <li>ブラウザ：Google Chrome（最新版）/ Safari（最新版）/ Microsoft Edge（最新版）</li>
-                        <li>インターネット接続：下り10Mbps以上推奨</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th>キャンセル・返金ポリシー</th>
-                <td>
-                    <ul>
-                        <li><strong>受講開始前：</strong>お支払い後、受講開始日の7日前までにご連絡いただいた場合、全額返金いたします（振込手数料はお客様負担）</li>
-                        <li><strong>受講開始後：</strong>サービスの性質上、受講開始後の返金はお受けできません</li>
-                        <li><strong>中途解約：</strong>年間契約のため中途解約による返金はございません</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <th>契約期間</th>
-                <td>お申し込み日から1年間<br><small style="color: rgba(250,248,245,0.5);">※契約更新については、契約満了1ヶ月前までにご案内いたします</small></td>
-            </tr>
-        </table>
+            <table class="info-table">
+                <tr>
+                    <th>販売事業者</th>
+                    <td>Aixeed株式会社</td>
+                </tr>
+                <tr>
+                    <th>代表責任者</th>
+                    <td>代表取締役 [氏名]</td>
+                </tr>
+                <tr>
+                    <th>所在地</th>
+                    <td>〒000-0000 東京都○○区○○ 0-0-0</td>
+                </tr>
+                <tr>
+                    <th>電話番号</th>
+                    <td>03-0000-0000<br><small>※お問い合わせはメールまたはフォームにてお願いいたします</small></td>
+                </tr>
+                <tr>
+                    <th>メールアドレス</th>
+                    <td>info@aixeed.co.jp</td>
+                </tr>
+                <tr>
+                    <th>Webサイト</th>
+                    <td><a href="index.html">https://aixeed.co.jp</a></td>
+                </tr>
+                <tr>
+                    <th>販売価格</th>
+                    <td>
+                        <strong>年間利用料：¥350,000/人（税別）</strong><br>
+                        <small>※2名以上の法人様からご利用いただけます</small><br>
+                        <small>※個別研修（特別編）は別途お見積り</small>
+                    </td>
+                </tr>
+                <tr>
+                    <th>販売価格以外の必要料金</th>
+                    <td>
+                        <ul>
+                            <li>消費税（税率10%）</li>
+                            <li>銀行振込の場合の振込手数料</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>支払方法</th>
+                    <td>
+                        <ul>
+                            <li>銀行振込（前払い）</li>
+                            <li>クレジットカード決済（VISA / Mastercard / JCB / American Express）</li>
+                            <li>請求書払い（法人様のみ、審査あり）</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>支払時期</th>
+                    <td>
+                        <ul>
+                            <li>銀行振込：お申し込みから14日以内</li>
+                            <li>クレジットカード：お申し込み時に決済</li>
+                            <li>請求書払い：請求書発行日から月末締め翌月末払い</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>サービス提供時期</th>
+                    <td>お支払い確認後、3営業日以内にアカウント発行・受講開始</td>
+                </tr>
+                <tr>
+                    <th>サービス提供方法</th>
+                    <td>
+                        <ul>
+                            <li>LMS（Learning Management System）による動画配信</li>
+                            <li>オンラインワークショップ（Zoom等を使用）</li>
+                            <li>メール・チャットによる質問対応</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>動作環境</th>
+                    <td>
+                        <strong>推奨環境：</strong>
+                        <ul>
+                            <li>OS：Windows 10以降 / macOS 10.15以降</li>
+                            <li>ブラウザ：Google Chrome / Safari / Microsoft Edge（各最新版）</li>
+                            <li>インターネット接続：下り10Mbps以上推奨</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>キャンセル・返金ポリシー</th>
+                    <td>
+                        <ul>
+                            <li><strong>受講開始前：</strong>受講開始日の7日前までのご連絡で全額返金（振込手数料はお客様負担）</li>
+                            <li><strong>受講開始後：</strong>サービスの性質上、受講開始後の返金はお受けできません</li>
+                            <li><strong>中途解約：</strong>年間契約のため中途解約による返金はございません</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>契約期間</th>
+                    <td>お申し込み日から1年間<br><small>※契約更新については、契約満了1ヶ月前までにご案内いたします</small></td>
+                </tr>
+            </table>
 
-        <div class="note-section">
-            <h3>助成金の活用について</h3>
-            <p>人材開発支援助成金（助成率最大75%）の活用が可能な場合があります。助成金の申請には研修開始の1ヶ月前までに計画届の提出が必要です。詳細は<a href="contact.html" style="color: var(--bright-green);">お問い合わせ</a>ください。当社にて申請サポートも対応しております。</p>
-        </div>
+            <div class="note-section">
+                <h3>助成金の活用について</h3>
+                <p>人材開発支援助成金（助成率最大75%）の活用が可能な場合があります。助成金の申請には研修開始の1ヶ月前までに計画届の提出が必要です。詳細は<a href="contact.html">お問い合わせ</a>ください。当社にて申請サポートも対応しております。</p>
+            </div>
 
-        <div class="note-section">
-            <h3>特定継続的役務提供について</h3>
-            <p>本サービスは特定商取引法に定める「特定継続的役務提供」に該当する場合があります。契約書面の交付、クーリング・オフ制度等、法令に基づき適切に対応いたします。詳細はお申し込み時にご説明いたします。</p>
-        </div>
+            <div class="note-section">
+                <h3>特定継続的役務提供について</h3>
+                <p>本サービスは特定商取引法に定める「特定継続的役務提供」に該当する場合があります。契約書面の交付、クーリング・オフ制度等、法令に基づき適切に対応いたします。詳細はお申し込み時にご説明いたします。</p>
+            </div>
 
-        <p class="update-date">制定日：2026年1月1日<br>最終更新日：2026年1月29日</p>
-    </main>
+            <p class="update-date">制定日：2026年1月1日<br>最終更新日：2026年1月29日</p>
+        </main>
+    </div>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h3><span>FUSION AI</span> for Biz</h3>
-                <p>Aixeed株式会社</p>
+        <div class="footer-inner">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3><span>FUSION AI</span> for Biz</h3>
+                    <p>Aixeed株式会社</p>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="index.html">トップ</a></li>
+                    <li><a href="privacy.html">プライバシーポリシー</a></li>
+                    <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
             </div>
-            <ul class="footer-links">
-                <li><a href="index.html">トップ</a></li>
-                <li><a href="privacy.html">プライバシーポリシー</a></li>
-                <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
-                <li><a href="contact.html">お問い合わせ</a></li>
-            </ul>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Aixeed Inc. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aixeed Inc. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 </body>
