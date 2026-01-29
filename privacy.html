@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プライバシーポリシー｜FUSION AI for Biz - Aixeed株式会社</title>
+    <meta name="description" content="Aixeed株式会社のプライバシーポリシー。FUSION AI for Bizサービスにおける個人情報の取り扱いについて説明しています。">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://awef705-glitch.github.io/aixeed-lp/privacy.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bright-green: #66FF00;
+            --bright-green-light: #AAFF00;
+            --bright-green-dark: #4ECC00;
+            --ink-black: #0a0a0a;
+            --ink-dark: #111111;
+            --ink-gray: #1a1a1a;
+            --ink-lighter: #2a2a2a;
+            --paper: #faf8f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: var(--ink-black);
+            color: var(--paper);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 0.8rem 2rem;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(102,255,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--paper);
+        }
+
+        .logo-text span {
+            color: var(--bright-green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(250,248,245,0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--bright-green);
+        }
+
+        .cta-nav {
+            background: var(--bright-green);
+            color: var(--ink-black) !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(102,255,0,0.2);
+        }
+
+        .page-label {
+            font-size: 0.8rem;
+            color: var(--bright-green);
+            letter-spacing: 0.3em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .page-title {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            color: rgba(250,248,245,0.6);
+            font-size: 0.95rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.3rem;
+            color: var(--bright-green);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(102,255,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .content-section h2::before {
+            content: '';
+            width: 4px;
+            height: 1.2rem;
+            background: var(--bright-green);
+            border-radius: 2px;
+        }
+
+        .content-section p {
+            color: rgba(250,248,245,0.85);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .content-section ul {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: rgba(250,248,245,0.85);
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Info Table */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .info-table th,
+        .info-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(250,248,245,0.1);
+            font-size: 0.95rem;
+        }
+
+        .info-table th {
+            width: 30%;
+            background: rgba(102,255,0,0.05);
+            color: var(--bright-green);
+            font-weight: 500;
+        }
+
+        .info-table td {
+            color: rgba(250,248,245,0.85);
+        }
+
+        /* Update Date */
+        .update-date {
+            text-align: right;
+            color: rgba(250,248,245,0.5);
+            font-size: 0.85rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(250,248,245,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--ink-dark);
+            border-top: 1px solid rgba(102,255,0,0.1);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-brand h3 span {
+            color: var(--bright-green);
+        }
+
+        .footer-brand p {
+            color: rgba(250,248,245,0.5);
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: rgba(250,248,245,0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--bright-green);
+        }
+
+        .footer-bottom {
+            max-width: 900px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(250,248,245,0.1);
+            text-align: center;
+            color: rgba(250,248,245,0.3);
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-title {
+                font-size: 1.6rem;
+            }
+
+            .info-table th,
+            .info-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .info-table th {
+                border-bottom: none;
+                padding-bottom: 0.5rem;
+            }
+
+            .info-table td {
+                padding-top: 0;
+                padding-bottom: 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-text"><span>FUSION AI</span> for Biz</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">トップ</a></li>
+                <li><a href="index.html#features">私たちの強み</a></li>
+                <li><a href="index.html#pricing">価格</a></li>
+                <li><a href="contact.html" class="cta-nav">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <p class="page-label">Privacy Policy</p>
+            <h1 class="page-title">プライバシーポリシー</h1>
+            <p class="page-subtitle">個人情報の取り扱いについて</p>
+        </div>
+
+        <section class="content-section">
+            <h2>基本方針</h2>
+            <p>Aixeed株式会社（以下「当社」といいます）は、お客様の個人情報の保護を重要な責務と認識し、以下のとおりプライバシーポリシーを定め、個人情報の適切な取り扱いと保護に努めます。</p>
+        </section>
+
+        <section class="content-section">
+            <h2>事業者情報</h2>
+            <table class="info-table">
+                <tr>
+                    <th>事業者名</th>
+                    <td>Aixeed株式会社</td>
+                </tr>
+                <tr>
+                    <th>代表者</th>
+                    <td>代表取締役 [氏名]</td>
+                </tr>
+                <tr>
+                    <th>所在地</th>
+                    <td>〒000-0000 東京都○○区○○ 0-0-0</td>
+                </tr>
+                <tr>
+                    <th>お問い合わせ</th>
+                    <td>info@aixeed.co.jp</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="content-section">
+            <h2>個人情報の定義</h2>
+            <p>本ポリシーにおいて「個人情報」とは、個人情報保護法に定める個人情報を指し、生存する個人に関する情報であって、当該情報に含まれる氏名、住所、電話番号、メールアドレス、その他の記述等により特定の個人を識別できるもの、または個人識別符号が含まれるものをいいます。</p>
+        </section>
+
+        <section class="content-section">
+            <h2>個人情報の取得方法</h2>
+            <p>当社は、以下の方法により個人情報を取得することがあります。</p>
+            <ul>
+                <li>お問い合わせフォーム、資料請求フォームからのご入力</li>
+                <li>サービスのお申し込み時のご登録</li>
+                <li>研修・セミナーへのお申し込み</li>
+                <li>名刺交換等の直接的なやり取り</li>
+                <li>当社Webサイトの閲覧（Cookie等による情報取得）</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>個人情報の利用目的</h2>
+            <p>当社は、取得した個人情報を以下の目的で利用いたします。</p>
+            <ul>
+                <li>FUSION AI for Biz その他当社サービスの提供・運営</li>
+                <li>お問い合わせへの対応・ご連絡</li>
+                <li>資料・見積書等のご送付</li>
+                <li>研修・セミナーのご案内</li>
+                <li>新サービス・キャンペーン等のご案内</li>
+                <li>サービス改善のための分析・調査</li>
+                <li>契約・請求に関する事務処理</li>
+                <li>法令に基づく対応</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>個人情報の第三者提供</h2>
+            <p>当社は、以下の場合を除き、お客様の同意なく個人情報を第三者に提供することはありません。</p>
+            <ul>
+                <li>法令に基づく場合</li>
+                <li>人の生命、身体または財産の保護のために必要がある場合で、本人の同意を得ることが困難な場合</li>
+                <li>公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合</li>
+                <li>国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>個人情報の安全管理</h2>
+            <p>当社は、個人情報の漏洩、滅失またはき損の防止その他の個人情報の安全管理のために、以下の措置を講じています。</p>
+            <ul>
+                <li>個人情報保護に関する規程の策定</li>
+                <li>従業員への教育・研修の実施</li>
+                <li>個人情報へのアクセス制限</li>
+                <li>セキュリティシステムの導入・運用</li>
+                <li>定期的な監査・点検の実施</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Cookieの使用について</h2>
+            <p>当社Webサイトでは、ユーザー体験の向上およびアクセス解析のためにCookieを使用しています。Cookieによって個人を特定できる情報は取得しておりませんが、ブラウザの設定によりCookieの受け取りを拒否することも可能です。</p>
+        </section>
+
+        <section class="content-section">
+            <h2>個人情報の開示・訂正・削除</h2>
+            <p>お客様は、当社が保有するご自身の個人情報について、開示、訂正、追加、削除、利用停止等を請求することができます。ご請求の際は、下記お問い合わせ窓口までご連絡ください。本人確認の上、法令に基づき対応いたします。</p>
+        </section>
+
+        <section class="content-section">
+            <h2>プライバシーポリシーの変更</h2>
+            <p>当社は、法令の改正や事業内容の変更等に伴い、本ポリシーを改定することがあります。改定した場合は、当社Webサイトにて公表いたします。</p>
+        </section>
+
+        <section class="content-section">
+            <h2>お問い合わせ窓口</h2>
+            <p>個人情報の取り扱いに関するお問い合わせは、下記までご連絡ください。</p>
+            <table class="info-table">
+                <tr>
+                    <th>担当部署</th>
+                    <td>Aixeed株式会社 個人情報保護担当</td>
+                </tr>
+                <tr>
+                    <th>メールアドレス</th>
+                    <td>privacy@aixeed.co.jp</td>
+                </tr>
+                <tr>
+                    <th>お問い合わせフォーム</th>
+                    <td><a href="contact.html" style="color: var(--bright-green);">こちら</a></td>
+                </tr>
+            </table>
+        </section>
+
+        <p class="update-date">制定日：2026年1月1日<br>最終更新日：2026年1月29日</p>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3><span>FUSION AI</span> for Biz</h3>
+                <p>Aixeed株式会社</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="index.html">トップ</a></li>
+                <li><a href="privacy.html">プライバシーポリシー</a></li>
+                <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Aixeed Inc. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

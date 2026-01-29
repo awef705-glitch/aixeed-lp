@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ｜FUSION AI for Biz - Aixeed株式会社</title>
+    <meta name="description" content="FUSION AI for Bizに関するお問い合わせ、資料請求はこちらから。助成金活用のご相談も承ります。">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://awef705-glitch.github.io/aixeed-lp/contact.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bright-green: #66FF00;
+            --bright-green-light: #AAFF00;
+            --bright-green-dark: #4ECC00;
+            --ink-black: #0a0a0a;
+            --ink-dark: #111111;
+            --ink-gray: #1a1a1a;
+            --ink-lighter: #2a2a2a;
+            --paper: #faf8f5;
+            --error: #e63946;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: var(--ink-black);
+            color: var(--paper);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 0.8rem 2rem;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(102,255,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--paper);
+        }
+
+        .logo-text span {
+            color: var(--bright-green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(250,248,245,0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--bright-green);
+        }
+
+        .cta-nav {
+            background: var(--bright-green);
+            color: var(--ink-black) !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-label {
+            font-size: 0.8rem;
+            color: var(--bright-green);
+            letter-spacing: 0.3em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .page-title {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            color: rgba(250,248,245,0.6);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Options */
+        .contact-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-option {
+            background: var(--ink-gray);
+            border: 1px solid rgba(102,255,0,0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-option:hover {
+            border-color: var(--bright-green);
+            transform: translateY(-3px);
+        }
+
+        .contact-option-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(102,255,0,0.1);
+            border-radius: 50%;
+        }
+
+        .contact-option-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--bright-green);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .contact-option h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--paper);
+        }
+
+        .contact-option p {
+            font-size: 0.85rem;
+            color: rgba(250,248,245,0.6);
+            margin-bottom: 1rem;
+        }
+
+        .contact-option a {
+            color: var(--bright-green);
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .contact-option a:hover {
+            text-decoration: underline;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: var(--ink-gray);
+            border-radius: 12px;
+            padding: 2.5rem;
+            border: 1px solid rgba(102,255,0,0.1);
+        }
+
+        .form-title {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .form-desc {
+            text-align: center;
+            color: rgba(250,248,245,0.6);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: rgba(250,248,245,0.9);
+        }
+
+        .form-label .required {
+            background: var(--bright-green);
+            color: var(--ink-black);
+            font-size: 0.7rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            margin-left: 0.5rem;
+            font-weight: 700;
+        }
+
+        .form-label .optional {
+            background: rgba(250,248,245,0.2);
+            color: rgba(250,248,245,0.7);
+            font-size: 0.7rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            margin-left: 0.5rem;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            background: var(--ink-dark);
+            border: 1px solid rgba(250,248,245,0.2);
+            border-radius: 6px;
+            color: var(--paper);
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--bright-green);
+            box-shadow: 0 0 0 3px rgba(102,255,0,0.1);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: rgba(250,248,245,0.3);
+        }
+
+        .form-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2366FF00' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+            cursor: pointer;
+        }
+
+        .form-select option {
+            background: var(--ink-dark);
+            color: var(--paper);
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        /* Checkbox */
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+
+        .form-checkbox input {
+            width: 18px;
+            height: 18px;
+            margin-top: 0.2rem;
+            accent-color: var(--bright-green);
+            cursor: pointer;
+        }
+
+        .form-checkbox label {
+            font-size: 0.85rem;
+            color: rgba(250,248,245,0.8);
+            cursor: pointer;
+        }
+
+        .form-checkbox label a {
+            color: var(--bright-green);
+            text-decoration: none;
+        }
+
+        .form-checkbox label a:hover {
+            text-decoration: underline;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--bright-green);
+            color: var(--ink-black);
+            border: none;
+            border-radius: 6px;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--bright-green-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102,255,0,0.3);
+        }
+
+        .submit-btn:disabled {
+            background: rgba(102,255,0,0.3);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Form Note */
+        .form-note {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(250,248,245,0.1);
+            color: rgba(250,248,245,0.5);
+            font-size: 0.85rem;
+        }
+
+        /* Success Message (hidden by default) */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: rgba(102,255,0,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--bright-green);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .success-message h3 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-message p {
+            color: rgba(250,248,245,0.7);
+            margin-bottom: 2rem;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: transparent;
+            color: var(--bright-green);
+            border: 1px solid var(--bright-green);
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(102,255,0,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--ink-dark);
+            border-top: 1px solid rgba(102,255,0,0.1);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-brand h3 span {
+            color: var(--bright-green);
+        }
+
+        .footer-brand p {
+            color: rgba(250,248,245,0.5);
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: rgba(250,248,245,0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--bright-green);
+        }
+
+        .footer-bottom {
+            max-width: 900px;
+            margin: 2rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(250,248,245,0.1);
+            text-align: center;
+            color: rgba(250,248,245,0.3);
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-title {
+                font-size: 1.6rem;
+            }
+
+            .contact-options {
+                grid-template-columns: 1fr;
+            }
+
+            .form-section {
+                padding: 1.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-text"><span>FUSION AI</span> for Biz</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">トップ</a></li>
+                <li><a href="index.html#features">私たちの強み</a></li>
+                <li><a href="index.html#pricing">価格</a></li>
+                <li><a href="contact.html" class="cta-nav">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <p class="page-label">Contact</p>
+            <h1 class="page-title">お問い合わせ</h1>
+            <p class="page-subtitle">ご質問・ご相談はお気軽にどうぞ</p>
+        </div>
+
+        <div class="contact-options">
+            <div class="contact-option">
+                <div class="contact-option-icon">
+                    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <h3>メールでのお問い合わせ</h3>
+                <p>24時間受付しております</p>
+                <a href="mailto:info@aixeed.co.jp">info@aixeed.co.jp</a>
+            </div>
+            <div class="contact-option">
+                <div class="contact-option-icon">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <h3>お電話でのお問い合わせ</h3>
+                <p>平日 10:00 - 18:00</p>
+                <a href="tel:03-0000-0000">03-0000-0000</a>
+            </div>
+        </div>
+
+        <div class="form-section" id="formSection">
+            <h2 class="form-title">お問い合わせフォーム</h2>
+            <p class="form-desc">以下のフォームに必要事項をご記入ください</p>
+
+            <form id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">
+                            会社名
+                            <span class="required">必須</span>
+                        </label>
+                        <input type="text" class="form-input" name="company" placeholder="株式会社○○" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">
+                            部署名
+                            <span class="optional">任意</span>
+                        </label>
+                        <input type="text" class="form-input" name="department" placeholder="人事部">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">
+                            お名前
+                            <span class="required">必須</span>
+                        </label>
+                        <input type="text" class="form-input" name="name" placeholder="山田 太郎" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">
+                            お名前（フリガナ）
+                            <span class="optional">任意</span>
+                        </label>
+                        <input type="text" class="form-input" name="name_kana" placeholder="ヤマダ タロウ">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">
+                            メールアドレス
+                            <span class="required">必須</span>
+                        </label>
+                        <input type="email" class="form-input" name="email" placeholder="example@company.co.jp" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">
+                            電話番号
+                            <span class="optional">任意</span>
+                        </label>
+                        <input type="tel" class="form-input" name="phone" placeholder="03-0000-0000">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">
+                        お問い合わせ種別
+                        <span class="required">必須</span>
+                    </label>
+                    <select class="form-select" name="inquiry_type" required>
+                        <option value="">選択してください</option>
+                        <option value="資料請求">資料請求</option>
+                        <option value="サービスについての質問">サービスについての質問</option>
+                        <option value="お見積りのご依頼">お見積りのご依頼</option>
+                        <option value="助成金についての相談">助成金についての相談</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">
+                        お問い合わせ内容
+                        <span class="required">必須</span>
+                    </label>
+                    <textarea class="form-textarea" name="message" placeholder="ご質問やご相談内容をご記入ください" required></textarea>
+                </div>
+
+                <div class="form-checkbox">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <label for="privacy">
+                        <a href="privacy.html" target="_blank">プライバシーポリシー</a>に同意する
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">送信する</button>
+
+                <p class="form-note">
+                    ※ 通常2営業日以内にご返信いたします<br>
+                    ※ お急ぎの場合はお電話にてお問い合わせください
+                </p>
+            </form>
+
+            <div class="success-message" id="successMessage">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h3>送信が完了しました</h3>
+                <p>お問い合わせいただきありがとうございます。<br>2営業日以内に担当者よりご連絡いたします。</p>
+                <a href="index.html" class="back-btn">トップページに戻る</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3><span>FUSION AI</span> for Biz</h3>
+                <p>Aixeed株式会社</p>
+            </div>
+            <ul class="footer-links">
+                <li><a href="index.html">トップ</a></li>
+                <li><a href="privacy.html">プライバシーポリシー</a></li>
+                <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Aixeed Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling (demo)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Show success message
+            document.getElementById('contactForm').style.display = 'none';
+            document.querySelector('.form-title').style.display = 'none';
+            document.querySelector('.form-desc').style.display = 'none';
+            document.getElementById('successMessage').classList.add('show');
+
+            // Scroll to top of form section
+            document.getElementById('formSection').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Enable submit button only when privacy checkbox is checked
+        const privacyCheckbox = document.getElementById('privacy');
+        const submitBtn = document.getElementById('submitBtn');
+
+        privacyCheckbox.addEventListener('change', function() {
+            submitBtn.disabled = !this.checked;
+        });
+
+        // Initial state
+        submitBtn.disabled = true;
+    </script>
+</body>
+</html>
