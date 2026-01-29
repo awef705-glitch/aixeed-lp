@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI仙人流｜法人向けAI研修 - 効率化で終わらせない。売上が上がるAI研修。</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Antique&family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink-black: #0a0a0a;
+            --ink-dark: #1a1a1a;
+            --ink-gray: #2a2a2a;
+            --gold: #d4af37;
+            --gold-light: #f4d03f;
+            --vermillion: #e63946;
+            --vermillion-dark: #c1121f;
+            --paper: #faf8f5;
+            --paper-dark: #e8e4dd;
+            --mist: rgba(255,255,255,0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: var(--ink-black);
+            color: var(--paper);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Typography */
+        .brush-text {
+            font-family: 'Zen Antique', serif;
+        }
+
+        .mincho {
+            font-family: 'Shippori Mincho', serif;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.95), rgba(10,10,10,0));
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: rgba(10,10,10,0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Zen Antique', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--paper);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .cta-nav {
+            background: var(--vermillion);
+            color: white !important;
+            padding: 0.6rem 1.5rem;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+
+        .cta-nav:hover {
+            background: var(--vermillion-dark);
+            color: white !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 6rem 2rem;
+            background:
+                radial-gradient(ellipse at 20% 80%, rgba(212,175,55,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(230,57,70,0.05) 0%, transparent 50%),
+                var(--ink-black);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                linear-gradient(135deg, transparent 40%, rgba(212,175,55,0.02) 50%, transparent 60%);
+            animation: shimmer 8s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--ink-black);
+            padding: 0.4rem 1.2rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+        }
+
+        .hero h1 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--paper) 0%, var(--paper-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero h1 .accent {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .hero-quote {
+            font-family: 'Zen Antique', serif;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--gold);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: rgba(250,248,245,0.7);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-primary {
+            background: var(--vermillion);
+            color: white;
+            clip-path: polygon(3% 0%, 100% 0%, 97% 100%, 0% 100%);
+        }
+
+        .btn-primary:hover {
+            background: var(--vermillion-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(230,57,70,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--paper);
+            border: 1px solid rgba(250,248,245,0.3);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(250,248,245,0.4);
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        .scroll-indicator::after {
+            content: '';
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--gold), transparent);
+        }
+
+        /* Section styling */
+        section {
+            padding: 8rem 2rem;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 0.3em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-family: 'Shippori Mincho', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            color: rgba(250,248,245,0.6);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Pain Points Section */
+        .pain-section {
+            background:
+                linear-gradient(135deg, var(--ink-dark) 0%, var(--ink-black) 100%);
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .pain-card {
+            background: var(--ink-gray);
+            padding: 2.5rem;
+            border-left: 3px solid var(--vermillion);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .pain-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(230,57,70,0.1) 0%, transparent 70%);
+        }
+
+        .pain-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .pain-number {
+            font-family: 'Zen Antique', serif;
+            font-size: 3rem;
+            color: var(--vermillion);
+            opacity: 0.3;
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+        }
+
+        .pain-card h3 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--paper);
+        }
+
+        .pain-card p {
+            color: rgba(250,248,245,0.6);
+            font-size: 0.95rem;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            background: var(--ink-black);
+        }
+
+        .solution-box {
+            background:
+                linear-gradient(135deg, rgba(212,175,55,0.05) 0%, transparent 50%),
+                var(--ink-dark);
+            border: 1px solid rgba(212,175,55,0.2);
+            padding: 4rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .solution-box::before,
+        .solution-box::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid var(--gold);
+            opacity: 0.3;
+        }
+
+        .solution-box::before {
+            top: -2px;
+            left: -2px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .solution-box::after {
+            bottom: -2px;
+            right: -2px;
+            border-left: none;
+            border-top: none;
+        }
+
+        .solution-quote {
+            font-family: 'Zen Antique', serif;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            color: var(--gold);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .solution-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--gold);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background: rgba(212,175,55,0.05);
+        }
+
+        .feature-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .feature h4 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature p {
+            font-size: 0.9rem;
+            color: rgba(250,248,245,0.6);
+        }
+
+        /* Before After Section */
+        .ba-section {
+            background:
+                radial-gradient(ellipse at 0% 50%, rgba(212,175,55,0.05) 0%, transparent 50%),
+                var(--ink-dark);
+        }
+
+        .ba-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .ba-card {
+            background: var(--ink-gray);
+            padding: 2.5rem;
+        }
+
+        .ba-card.before {
+            border-top: 3px solid rgba(250,248,245,0.2);
+        }
+
+        .ba-card.after {
+            border-top: 3px solid var(--gold);
+        }
+
+        .ba-label {
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            margin-bottom: 1.5rem;
+            color: rgba(250,248,245,0.5);
+        }
+
+        .ba-card.after .ba-label {
+            color: var(--gold);
+        }
+
+        .ba-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(250,248,245,0.1);
+        }
+
+        .ba-item:last-child {
+            border-bottom: none;
+        }
+
+        .ba-metric {
+            font-size: 0.9rem;
+            color: rgba(250,248,245,0.7);
+        }
+
+        .ba-value {
+            font-family: 'Zen Antique', serif;
+            font-size: 1.2rem;
+        }
+
+        .ba-card.after .ba-value {
+            color: var(--gold);
+        }
+
+        .ba-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--gold);
+            padding-top: 8rem;
+        }
+
+        .improvement {
+            display: inline-block;
+            background: rgba(212,175,55,0.1);
+            color: var(--gold);
+            padding: 0.2rem 0.5rem;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+            border-radius: 2px;
+        }
+
+        /* Curriculum Section */
+        .curriculum-section {
+            background: var(--ink-black);
+        }
+
+        .curriculum-timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .curriculum-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--gold), var(--vermillion));
+        }
+
+        .curriculum-phase {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .curriculum-phase::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--gold);
+            border-radius: 50%;
+            transform: translateX(-5px);
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .phase-badge {
+            background: var(--gold);
+            color: var(--ink-black);
+            padding: 0.3rem 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .phase-title {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.3rem;
+        }
+
+        .phase-hours {
+            color: rgba(250,248,245,0.5);
+            font-size: 0.9rem;
+        }
+
+        .curriculum-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .curriculum-item {
+            background: var(--ink-gray);
+            padding: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .curriculum-item:hover {
+            background: var(--ink-dark);
+            transform: translateX(5px);
+        }
+
+        .item-number {
+            font-family: 'Zen Antique', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            opacity: 0.5;
+            min-width: 2rem;
+        }
+
+        .item-content h5 {
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .item-content p {
+            font-size: 0.8rem;
+            color: rgba(250,248,245,0.5);
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background:
+                radial-gradient(ellipse at 80% 20%, rgba(230,57,70,0.05) 0%, transparent 50%),
+                var(--ink-dark);
+        }
+
+        .pricing-highlight {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .price-tag {
+            font-family: 'Zen Antique', serif;
+            font-size: 4rem;
+            color: var(--gold);
+            display: inline-block;
+        }
+
+        .price-tag .small {
+            font-size: 1.5rem;
+        }
+
+        .price-original {
+            text-decoration: line-through;
+            color: rgba(250,248,245,0.4);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        .subsidy-badge {
+            display: inline-block;
+            background: var(--vermillion);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            font-weight: 700;
+            margin-top: 1rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background: var(--ink-gray);
+            padding: 2.5rem;
+            text-align: center;
+            border-top: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card.featured {
+            border-top-color: var(--gold);
+            transform: scale(1.05);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        .pricing-name {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price {
+            font-family: 'Zen Antique', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin: 1rem 0;
+        }
+
+        .pricing-price span {
+            font-size: 1rem;
+            color: rgba(250,248,245,0.5);
+        }
+
+        .pricing-features {
+            text-align: left;
+            margin: 1.5rem 0;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(250,248,245,0.1);
+            font-size: 0.9rem;
+            color: rgba(250,248,245,0.7);
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--gold);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--ink-black);
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--ink-gray);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--ink-dark);
+        }
+
+        .faq-question h4 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        .faq-toggle {
+            width: 24px;
+            height: 24px;
+            border: 1px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer.open {
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            padding: 0 2rem 1.5rem;
+            color: rgba(250,248,245,0.7);
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background:
+                linear-gradient(135deg, var(--ink-dark) 0%, var(--ink-black) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background:
+                radial-gradient(circle at 30% 30%, rgba(212,175,55,0.1) 0%, transparent 40%),
+                radial-gradient(circle at 70% 70%, rgba(230,57,70,0.05) 0%, transparent 40%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-family: 'Shippori Mincho', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .cta-desc {
+            color: rgba(250,248,245,0.7);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-benefits {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-benefit {
+            text-align: center;
+        }
+
+        .cta-benefit-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 0.5rem;
+            border: 1px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .cta-benefit-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--gold);
+            fill: none;
+        }
+
+        .cta-benefit p {
+            font-size: 0.9rem;
+            color: rgba(250,248,245,0.7);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--ink-black);
+            border-top: 1px solid rgba(250,248,245,0.1);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Zen Antique', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: rgba(250,248,245,0.5);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-links h4 {
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            color: var(--paper);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(250,248,245,0.5);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(250,248,245,0.1);
+            text-align: center;
+            color: rgba(250,248,245,0.3);
+            font-size: 0.8rem;
+        }
+
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .solution-features {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .ba-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ba-arrow {
+                padding: 1rem 0;
+                transform: rotate(90deg);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .cta-benefits {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">AI仙人流</a>
+            <ul class="nav-links">
+                <li><a href="#problem">課題</a></li>
+                <li><a href="#solution">解決策</a></li>
+                <li><a href="#curriculum">カリキュラム</a></li>
+                <li><a href="#pricing">料金</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact" class="cta-nav">無料相談</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">助成金対応で実質75%オフ</div>
+            <h1>効率化で終わらせない。<br><span class="accent">売上が上がる</span>AI研修。</h1>
+            <p class="hero-quote">「AIは道具ではない。分身を育て、売上を動かせ。」</p>
+            <p class="hero-sub">15時間で「使える → 作れる → 成果が出る」<br>AI仙人流の実践型研修プログラム</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">30分無料相談を予約</a>
+                <a href="#curriculum" class="btn btn-secondary">カリキュラムを見る</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            SCROLL
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="pain-section" id="problem">
+        <div class="container">
+            <div class="section-header fade-in">
+                <p class="section-label">Problem</p>
+                <h2 class="section-title">いま企業が直面する3つの壁</h2>
+            </div>
+            <div class="pain-grid">
+                <div class="pain-card fade-in stagger-1">
+                    <span class="pain-number">壱</span>
+                    <h3>定着しない</h3>
+                    <p>AIを導入したが、現場で使われない。研修が座学で終わり、実務に活かされない。</p>
+                </div>
+                <div class="pain-card fade-in stagger-2">
+                    <span class="pain-number">弐</span>
+                    <h3>リスクが不安</h3>
+                    <p>情報漏洩、著作権侵害、ハルシネーションが心配。何を入力して良いか分からず、現場が萎縮。</p>
+                </div>
+                <div class="pain-card fade-in stagger-3">
+                    <span class="pain-number">参</span>
+                    <h3>コストが重い</h3>
+                    <p>研修費用が高く、ROIが見えない。助成金を使いたいが、要件が複雑で諦めている。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section" id="solution">
+        <div class="container">
+            <div class="section-header fade-in">
+                <p class="section-label">Solution</p>
+                <h2 class="section-title">Aixeedが提供する解決策</h2>
+            </div>
+            <div class="solution-box fade-in">
+                <p class="solution-quote">「使う」だけで終わらせない。<br>自分の分身（AIエージェント）を作り、<br>売上に直結させる。</p>
+                <div class="solution-features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <h4>助成金対応</h4>
+                        <p>最大75%の助成で<br>実質負担を大幅軽減</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+                        </div>
+                        <h4>売上直結</h4>
+                        <p>効率化だけでなく<br>トップライン改善にフォーカス</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h4>実践型</h4>
+                        <p>AIエージェント（分身）を<br>作る体験まで</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Section -->
+    <section class="ba-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <p class="section-label">Results</p>
+                <h2 class="section-title">研修導入による変化</h2>
+                <p class="section-desc">架空企業B社の想定効果イメージ</p>
+            </div>
+            <div class="ba-grid fade-in">
+                <div class="ba-card before">
+                    <p class="ba-label">BEFORE</p>
+                    <div class="ba-item">
+                        <span class="ba-metric">メール作成</span>
+                        <span class="ba-value">30分/件</span>
+                    </div>
+                    <div class="ba-item">
+                        <span class="ba-metric">提案書作成</span>
+                        <span class="ba-value">3時間/件</span>
+                    </div>
+                    <div class="ba-item">
+                        <span class="ba-metric">議事録作成</span>
+                        <span class="ba-value">40分/回</span>
+                    </div>
+                    <div class="ba-item">
+                        <span class="ba-metric">商談化率</span>
+                        <span class="ba-value">12%</span>
+                    </div>
+                </div>
+                <div class="ba-arrow">→</div>
+                <div class="ba-card after">
+                    <p class="ba-label">AFTER</p>
+                    <div class="ba-item">
+                        <span class="ba-metric">メール作成</span>
+                        <span class="ba-value">5分/件 <span class="improvement">▲83%</span></span>
+                    </div>
+                    <div class="ba-item">
+                        <span class="ba-metric">提案書作成</span>
+                        <span class="ba-value">45分/件 <span class="improvement">▲75%</span></span>
+                    </div>
+                    <div class="ba-item">
+                        <span class="ba-metric">議事録作成</span>
+                        <span class="ba-value">8分/回 <span class="improvement">▲80%</span></span>
+                    </div>
+                    <div class="ba-item">
+                        <span class="ba-metric">商談化率</span>
+                        <span class="ba-value">18% <span class="improvement">+50%</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="curriculum-section" id="curriculum">
+        <div class="container">
+            <div class="section-header fade-in">
+                <p class="section-label">Curriculum</p>
+                <h2 class="section-title">15時間パッケージ</h2>
+                <p class="section-desc">eラーニング10時間 + ワークショップ5時間</p>
+            </div>
+            <div class="curriculum-timeline">
+                <div class="curriculum-phase fade-in">
+                    <div class="phase-header">
+                        <span class="phase-badge">e-Learning</span>
+                        <span class="phase-title">基礎〜応用（10時間）</span>
+                    </div>
+                    <div class="curriculum-items">
+                        <div class="curriculum-item">
+                            <span class="item-number">01</span>
+                            <div class="item-content">
+                                <h5>AI時代の考え方</h5>
+                                <p>1.0h｜業務課題メモ作成</p>
+                            </div>
+                        </div>
+                        <div class="curriculum-item">
+                            <span class="item-number">02</span>
+                            <div class="item-content">
+                                <h5>生成AIリテラシー</h5>
+                                <p>1.0h｜ツール選定表</p>
+                            </div>
+                        </div>
+                        <div class="curriculum-item">
+                            <span class="item-number">03</span>
+                            <div class="item-content">
+                                <h5>リスク・倫理・社内ルール</h5>
+                                <p>1.0h｜ガイドライン雛形</p>
+                            </div>
+                        </div>
+                        <div class="curriculum-item">
+                            <span class="item-number">04</span>
+                            <div class="item-content">
+                                <h5>プロンプト基礎</h5>
+                                <p>1.5h｜部署別テンプレ集</p>
+                            </div>
+                        </div>
+                        <div class="curriculum-item">
+                            <span class="item-number">05</span>
+                            <div class="item-content">
+                                <h5>思考整理</h5>
+                                <p>1.0h｜意思決定テンプレ</p>
+                            </div>
+                        </div>
+                        <div class="curriculum-item">
+                            <span class="item-number">06</span>
+                            <div class="item-content">
+                                <h5>コンテクスト収集</h5>
+                                <p>1.0h｜整形テンプレ</p>
+                            </div>
+                        </div>
+                        <div class="curriculum-item">
+                            <span class="item-number">07</span>
+                            <div class="item-content">
+                                <h5>作業効率化</h5>
+                                <p>1.0h｜10分テンプレ集</p>
+                            </div>
+                        </div>
+                        <div class="curriculum-item">
+                            <span class="item-number">08</span>
+                            <div class="item-content">
+                                <h5>環境セットアップ</h5>
+                                <p>0.5h｜権限設計メモ</p>
+                            </div>
+                        </div>
+                        <div class="curriculum-item">
+                            <span class="item-number">09</span>
+                            <div class="item-content">
+                                <h5>分身設計</h5>
+                                <p>1.5h｜AI弟子設計書</p>
+                            </div>
+                        </div>
+                        <div class="curriculum-item">
+                            <span class="item-number">10</span>
+                            <div class="item-content">
+                                <h5>RAG/開発スタイル</h5>
+                                <p>0.5h｜理解度テスト</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="curriculum-phase fade-in">
+                    <div class="phase-header">
+                        <span class="phase-badge">Workshop</span>
+                        <span class="phase-title">実践〜定着（5時間）</span>
+                    </div>
+                    <div class="curriculum-items">
+                        <div class="curriculum-item">
+                            <span class="item-number">11</span>
+                            <div class="item-content">
+                                <h5>売上導線設計</h5>
+                                <p>1.5h｜売上導線マップ</p>
+                            </div>
+                        </div>
+                        <div class="curriculum-item">
+                            <span class="item-number">12</span>
+                            <div class="item-content">
+                                <h5>エージェント構築</h5>
+                                <p>2.0h｜試作エージェント</p>
+                            </div>
+                        </div>
+                        <div class="curriculum-item">
+                            <span class="item-number">13</span>
+                            <div class="item-content">
+                                <h5>実演会・壁打ち</h5>
+                                <p>1.0h｜改善ログ</p>
+                            </div>
+                        </div>
+                        <div class="curriculum-item">
+                            <span class="item-number">14</span>
+                            <div class="item-content">
+                                <h5>定着計画</h5>
+                                <p>0.5h｜90日ロードマップ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header fade-in">
+                <p class="section-label">Pricing</p>
+                <h2 class="section-title">料金プラン</h2>
+            </div>
+            <div class="pricing-highlight fade-in">
+                <p><span class="price-original">150万円〜</span></p>
+                <p class="price-tag">実質<span class="small">約</span>37.5<span class="small">万円〜</span></p>
+                <p class="subsidy-badge">助成金活用で最大75%オフ</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card fade-in stagger-1">
+                    <h3 class="pricing-name">基礎研修</h3>
+                    <p class="pricing-price">50万円〜<span>/6h</span></p>
+                    <ul class="pricing-features">
+                        <li>生成AIリテラシー</li>
+                        <li>プロンプト基礎</li>
+                        <li>リスク管理</li>
+                        <li>テンプレート配布</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">詳細を聞く</a>
+                </div>
+                <div class="pricing-card featured fade-in stagger-2">
+                    <h3 class="pricing-name">AI仙人流フルパッケージ</h3>
+                    <p class="pricing-price">150万円〜<span>/15h</span></p>
+                    <ul class="pricing-features">
+                        <li>eラーニング10時間</li>
+                        <li>ワークショップ5時間</li>
+                        <li>AIエージェント構築</li>
+                        <li>売上導線設計</li>
+                        <li>90日定着支援</li>
+                        <li>助成金申請サポート</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%;">無料相談</a>
+                </div>
+                <div class="pricing-card fade-in stagger-3">
+                    <h3 class="pricing-name">カスタム研修</h3>
+                    <p class="pricing-price">要相談</p>
+                    <ul class="pricing-features">
+                        <li>業種別カスタマイズ</li>
+                        <li>追加ワークショップ</li>
+                        <li>経営者向けセッション</li>
+                        <li>長期伴走支援</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">相談する</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header fade-in">
+                <p class="section-label">FAQ</p>
+                <h2 class="section-title">よくある質問</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>助成金は必ず使えますか？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>要件に合致する場合に活用可能です。研修開始の1ヶ月前までに計画届が必要なため、初回相談時に適用可否を診断します。</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>eラーニングだけでも可能ですか？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>助成金対応を想定し、eラーニング＋ワークショップの組み合わせを推奨します。eラーニングのみのプランも別途ご相談可能です。</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>機密情報の取り扱いは大丈夫ですか？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>入力禁止事項のルール化や匿名化のガイドラインを用意し、安全運用を前提に設計します。研修内でもリスク管理を徹底指導します。</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>初心者でも受講できますか？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>生成AIリテラシーから段階的に学べるため、初心者でも問題ありません。非エンジニア向けに設計しています。</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h4>カスタマイズはできますか？</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>業種・職種・業務プロセスに合わせて内容を調整できます。初回ヒアリングで最適なプランをご提案します。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2 class="cta-title">まずは30分の無料相談から</h2>
+                <p class="cta-desc">貴社の課題整理から助成金の適用可否まで、無料でご相談いただけます。</p>
+                <div class="cta-benefits">
+                    <div class="cta-benefit">
+                        <div class="cta-benefit-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </div>
+                        <p>課題整理</p>
+                    </div>
+                    <div class="cta-benefit">
+                        <div class="cta-benefit-icon">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        </div>
+                        <p>プラン提案</p>
+                    </div>
+                    <div class="cta-benefit">
+                        <div class="cta-benefit-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
+                        <p>助成金診断</p>
+                    </div>
+                    <div class="cta-benefit">
+                        <div class="cta-benefit-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                        </div>
+                        <p>概算見積</p>
+                    </div>
+                </div>
+                <a href="mailto:info@aixeed.co.jp" class="btn btn-primary">無料相談を予約する</a>
+                <p style="margin-top: 1.5rem; font-size: 0.85rem; color: rgba(250,248,245,0.5);">
+                    メール：info@aixeed.co.jp<br>
+                    ※ 4月開始の場合、2月中のお申込みがスムーズです
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>AI仙人流</h3>
+                <p>効率化で終わらせない。売上が上がるAI研修。<br>Aixeed株式会社が提供する法人向けAI研修プログラム。</p>
+            </div>
+            <div class="footer-links">
+                <h4>MENU</h4>
+                <ul>
+                    <li><a href="#problem">課題</a></li>
+                    <li><a href="#solution">解決策</a></li>
+                    <li><a href="#curriculum">カリキュラム</a></li>
+                    <li><a href="#pricing">料金</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>COMPANY</h4>
+                <ul>
+                    <li><a href="#">会社概要</a></li>
+                    <li><a href="#">プライバシーポリシー</a></li>
+                    <li><a href="#">特定商取引法に基づく表記</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Aixeed Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Fade in on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // FAQ toggle
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const toggle = element.querySelector('.faq-toggle');
+
+            if (answer.classList.contains('open')) {
+                answer.classList.remove('open');
+                toggle.textContent = '+';
+            } else {
+                // Close all other FAQs
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+                document.querySelectorAll('.faq-toggle').forEach(t => t.textContent = '+');
+
+                answer.classList.add('open');
+                toggle.textContent = '−';
+            }
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
