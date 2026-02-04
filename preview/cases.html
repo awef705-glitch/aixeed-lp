@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>導入事例｜FUSION AI for Biz - 法人向け生成AI研修</title>
+    <meta name="description" content="FUSION AI for Bizの導入事例をご紹介。製造業、IT企業、金融、サービス業など、様々な業種での生成AI研修の成果と受講者の声をご覧いただけます。">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://awef705-glitch.github.io/aixeed-lp/cases.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Antique&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bright-green: #66FF00;
+            --bright-green-light: #AAFF00;
+            --bright-green-dark: #4ECC00;
+            --ink-black: #0a0a0a;
+            --ink-dark: #111111;
+            --ink-gray: #1a1a1a;
+            --ink-lighter: #2a2a2a;
+            --paper: #faf8f5;
+            --paper-dark: #e8e4dd;
+            --vermillion: #e63946;
+            --gold: #d4af37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: var(--ink-black);
+            color: var(--paper);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.02;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 0.8rem 2rem;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(102,255,0,0.1);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--paper);
+        }
+
+        .logo-text span {
+            color: var(--bright-green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(250,248,245,0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--bright-green);
+        }
+
+        .cta-nav {
+            background: var(--bright-green);
+            color: var(--ink-black) !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .cta-nav:hover {
+            background: var(--bright-green-light);
+        }
+
+        /* Main Content */
+        .main-wrapper {
+            width: 100%;
+            padding: 0 2rem;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 8rem 0 5rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-label {
+            font-size: 0.8rem;
+            color: var(--bright-green);
+            letter-spacing: 0.3em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .page-title {
+            font-family: 'Shippori Mincho', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .page-desc {
+            color: rgba(250,248,245,0.6);
+            font-size: 1rem;
+        }
+
+        /* Stats Banner */
+        .stats-banner {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat-card {
+            background: var(--ink-gray);
+            border: 1px solid rgba(102,255,0,0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-card-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--bright-green);
+            display: block;
+            line-height: 1.2;
+        }
+
+        .stat-card-label {
+            font-size: 0.85rem;
+            color: rgba(250,248,245,0.6);
+            margin-top: 0.3rem;
+        }
+
+        /* Case Card */
+        .case-card {
+            background: var(--ink-gray);
+            border: 1px solid rgba(102,255,0,0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+            transition: all 0.3s;
+        }
+
+        .case-card:hover {
+            border-color: rgba(102,255,0,0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .case-header {
+            background: linear-gradient(135deg, rgba(102,255,0,0.1) 0%, transparent 100%);
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .case-company {
+            flex: 1;
+        }
+
+        .case-industry {
+            display: inline-block;
+            background: rgba(102,255,0,0.2);
+            color: var(--bright-green);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+        }
+
+        .case-company h3 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .case-company-info {
+            font-size: 0.85rem;
+            color: rgba(250,248,245,0.5);
+        }
+
+        .case-results {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .case-result-item {
+            text-align: center;
+            background: var(--ink-dark);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+        }
+
+        .case-result-number {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--bright-green);
+            display: block;
+        }
+
+        .case-result-label {
+            font-size: 0.75rem;
+            color: rgba(250,248,245,0.5);
+        }
+
+        .case-body {
+            padding: 2rem;
+        }
+
+        .case-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .case-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .case-section h4 {
+            font-size: 0.85rem;
+            color: var(--bright-green);
+            letter-spacing: 0.1em;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .case-section h4::before {
+            content: '';
+            width: 4px;
+            height: 16px;
+            background: var(--bright-green);
+            border-radius: 2px;
+        }
+
+        .case-section p {
+            font-size: 0.95rem;
+            color: rgba(250,248,245,0.8);
+            line-height: 1.9;
+        }
+
+        .case-quote {
+            background: var(--ink-dark);
+            border-left: 3px solid var(--bright-green);
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .case-quote p {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1rem;
+            font-style: italic;
+            margin-bottom: 0.8rem;
+        }
+
+        .case-quote-author {
+            font-size: 0.85rem;
+            color: rgba(250,248,245,0.5);
+            text-align: right;
+        }
+
+        /* Filter tabs */
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 0.6rem 1.2rem;
+            background: var(--ink-gray);
+            border: 1px solid rgba(102,255,0,0.2);
+            border-radius: 50px;
+            color: rgba(250,248,245,0.7);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-tab:hover,
+        .filter-tab.active {
+            background: rgba(102,255,0,0.1);
+            border-color: var(--bright-green);
+            color: var(--bright-green);
+        }
+
+        /* CTA */
+        .cases-cta {
+            background: linear-gradient(135deg, var(--ink-gray) 0%, var(--ink-dark) 100%);
+            border: 2px solid var(--bright-green);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .cases-cta h3 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .cases-cta p {
+            color: rgba(250,248,245,0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--bright-green);
+            color: var(--ink-black);
+        }
+
+        .btn-primary:hover {
+            background: var(--bright-green-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102,255,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--paper);
+            border: 1px solid rgba(250,248,245,0.3);
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--bright-green);
+            color: var(--bright-green);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--ink-black);
+            border-top: 1px solid rgba(102,255,0,0.1);
+            padding: 3rem 2rem;
+        }
+
+        .footer-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(250,248,245,0.5);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--bright-green);
+        }
+
+        .footer-copy {
+            text-align: center;
+            color: rgba(250,248,245,0.3);
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .main-wrapper {
+                padding: 0 1rem;
+            }
+
+            main {
+                padding: 6rem 0 3rem;
+            }
+
+            .stats-banner {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .case-header {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .case-results {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .case-result-item {
+                flex: 1;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+
+            .filter-tabs {
+                gap: 0.5rem;
+            }
+
+            .filter-tab {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-text"><span>FUSION AI</span> for Biz</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">私たちの強み</a></li>
+                <li><a href="index.html#curriculum">講座の紹介</a></li>
+                <li><a href="index.html#subsidy">助成金の活用</a></li>
+                <li><a href="index.html#pricing">価格</a></li>
+                <li><a href="contact.html" class="cta-nav">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-wrapper">
+        <main>
+            <div class="page-header">
+                <p class="page-label">Case Studies</p>
+                <h1 class="page-title">導入事例</h1>
+                <p class="page-desc">FUSION AI for Bizを導入いただいた企業様の成果と声をご紹介します</p>
+            </div>
+
+            <div class="stats-banner">
+                <div class="stat-card">
+                    <span class="stat-card-number">100+</span>
+                    <span class="stat-card-label">導入企業数</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-card-number">93%</span>
+                    <span class="stat-card-label">満足度</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-card-number">月40h</span>
+                    <span class="stat-card-label">平均削減時間</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-card-number">5%+</span>
+                    <span class="stat-card-label">売上向上率</span>
+                </div>
+            </div>
+
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">すべて</button>
+                <button class="filter-tab" data-filter="manufacturing">製造業</button>
+                <button class="filter-tab" data-filter="it">IT・通信</button>
+                <button class="filter-tab" data-filter="service">サービス業</button>
+                <button class="filter-tab" data-filter="finance">金融</button>
+            </div>
+
+            <!-- Case 1: 製造業 -->
+            <article class="case-card" data-industry="manufacturing">
+                <div class="case-header">
+                    <div class="case-company">
+                        <span class="case-industry">製造業</span>
+                        <h3>A社（精密機器メーカー）</h3>
+                        <p class="case-company-info">従業員数 800名 / 受講者 50名</p>
+                    </div>
+                    <div class="case-results">
+                        <div class="case-result-item">
+                            <span class="case-result-number">月60h</span>
+                            <span class="case-result-label">工数削減</span>
+                        </div>
+                        <div class="case-result-item">
+                            <span class="case-result-number">8%</span>
+                            <span class="case-result-label">売上向上</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-body">
+                    <div class="case-section">
+                        <h4>導入前の課題</h4>
+                        <p>生成AIツールを導入したものの、社員の活用率が低く、使っているのは一部のIT部門のみ。営業資料や技術文書の作成に多くの時間がかかり、エンジニアが本来の開発業務に集中できていなかった。</p>
+                    </div>
+                    <div class="case-section">
+                        <h4>導入後の成果</h4>
+                        <p>研修を通じて全部門でAI活用が定着。特に営業部門では提案書作成の自動化により、提案回数が1.5倍に増加。技術部門では仕様書・マニュアル作成の効率化により、月60時間の工数削減を達成。売上は前年比8%増を記録した。</p>
+                    </div>
+                    <div class="case-quote">
+                        <p>「以前は"AIを使いこなせる人"と"使えない人"の差が大きかったが、研修後は全社員が同じレベルでAIを活用できるようになった。特にAIエージェント作成の実習が実践的で、研修終了後すぐに業務で使えた。」</p>
+                        <p class="case-quote-author">— 技術本部 部長</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Case 2: IT -->
+            <article class="case-card" data-industry="it">
+                <div class="case-header">
+                    <div class="case-company">
+                        <span class="case-industry">IT・通信</span>
+                        <h3>B社（SaaS企業）</h3>
+                        <p class="case-company-info">従業員数 150名 / 受講者 30名</p>
+                    </div>
+                    <div class="case-results">
+                        <div class="case-result-item">
+                            <span class="case-result-number">月45h</span>
+                            <span class="case-result-label">工数削減</span>
+                        </div>
+                        <div class="case-result-item">
+                            <span class="case-result-number">2倍</span>
+                            <span class="case-result-label">CS対応数</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-body">
+                    <div class="case-section">
+                        <h4>導入前の課題</h4>
+                        <p>カスタマーサクセスチームの対応工数が増加し、新規顧客への対応が遅れがちだった。また、プロダクトのドキュメント作成に時間がかかり、機能リリースに遅延が発生していた。</p>
+                    </div>
+                    <div class="case-section">
+                        <h4>導入後の成果</h4>
+                        <p>研修で学んだRAG技術を活用し、社内ナレッジベースを構築。カスタマーサクセスチームが自作したAIチャットボットにより、問い合わせ対応数が2倍に。また、API連携のAIエージェントにより、ドキュメント作成が自動化され、リリースサイクルが30%短縮された。</p>
+                    </div>
+                    <div class="case-quote">
+                        <p>「単なるツールの使い方ではなく、"AIエージェントを自分で作る"という視点が新鮮だった。エンジニア以外のメンバーもノーコードでAIツールを作れるようになり、チーム全体の生産性が大幅に向上した。」</p>
+                        <p class="case-quote-author">— 代表取締役 CEO</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Case 3: サービス業 -->
+            <article class="case-card" data-industry="service">
+                <div class="case-header">
+                    <div class="case-company">
+                        <span class="case-industry">サービス業</span>
+                        <h3>C社（人材紹介会社）</h3>
+                        <p class="case-company-info">従業員数 200名 / 受講者 40名</p>
+                    </div>
+                    <div class="case-results">
+                        <div class="case-result-item">
+                            <span class="case-result-number">月35h</span>
+                            <span class="case-result-label">工数削減</span>
+                        </div>
+                        <div class="case-result-item">
+                            <span class="case-result-number">12%</span>
+                            <span class="case-result-label">成約率UP</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-body">
+                    <div class="case-section">
+                        <h4>導入前の課題</h4>
+                        <p>コンサルタントが求職者との面談記録や企業への推薦文作成に多くの時間を費やしており、本来の面談やマッチング業務に集中できていなかった。また、蓄積されたノウハウの共有が進まず、個人の経験に依存していた。</p>
+                    </div>
+                    <div class="case-section">
+                        <h4>導入後の成果</h4>
+                        <p>面談記録の自動要約、推薦文のAI生成により、コンサルタント1人あたり月35時間の削減を実現。さらに、過去の成功事例をベースにしたマッチング提案AIエージェントを構築し、成約率が12%向上した。</p>
+                    </div>
+                    <div class="case-quote">
+                        <p>「助成金の活用で実質負担を大幅に抑えられたのが導入の決め手でした。研修内容も実践的で、受講翌日から使えるスキルばかり。今では"AIなしでは仕事できない"という声も出るほどです。」</p>
+                        <p class="case-quote-author">— 人事部 マネージャー</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Case 4: 金融 -->
+            <article class="case-card" data-industry="finance">
+                <div class="case-header">
+                    <div class="case-company">
+                        <span class="case-industry">金融</span>
+                        <h3>D社（保険代理店）</h3>
+                        <p class="case-company-info">従業員数 100名 / 受講者 25名</p>
+                    </div>
+                    <div class="case-results">
+                        <div class="case-result-item">
+                            <span class="case-result-number">月25h</span>
+                            <span class="case-result-label">工数削減</span>
+                        </div>
+                        <div class="case-result-item">
+                            <span class="case-result-number">1.3倍</span>
+                            <span class="case-result-label">商談数</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-body">
+                    <div class="case-section">
+                        <h4>導入前の課題</h4>
+                        <p>保険商品の比較資料や提案書の作成に時間がかかり、営業担当者が顧客との対話時間を十分に確保できていなかった。また、規制対応のための文書作成・チェック業務の負担が大きかった。</p>
+                    </div>
+                    <div class="case-section">
+                        <h4>導入後の成果</h4>
+                        <p>顧客ニーズに基づいた提案書自動生成AIを構築し、提案書作成時間を80%削減。営業担当者は顧客との対話に集中できるようになり、商談数が1.3倍に増加。また、コンプライアンスチェックAIにより、文書確認作業も効率化された。</p>
+                    </div>
+                    <div class="case-quote">
+                        <p>「金融業界はセキュリティ面での懸念があったが、研修でリスク管理や情報漏洩対策もしっかり学べた。安心してAI活用を推進できている。」</p>
+                        <p class="case-quote-author">— 営業本部 本部長</p>
+                    </div>
+                </div>
+            </article>
+
+            <div class="cases-cta">
+                <h3>御社でもAI活用を加速しませんか？</h3>
+                <p>業種・規模に合わせた導入プランをご提案します。<br>まずはお気軽にご相談ください。</p>
+                <a href="contact.html" class="btn btn-primary">お問い合わせ</a>
+                <a href="download.html" class="btn btn-secondary">資料ダウンロード</a>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="index.html">トップ</a>
+                <a href="about.html">会社概要</a>
+                <a href="cases.html">導入事例</a>
+                <a href="faq.html">よくある質問</a>
+                <a href="privacy.html">プライバシーポリシー</a>
+                <a href="tokushoho.html">特定商取引法に基づく表記</a>
+                <a href="contact.html">お問い合わせ</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Aixeed Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const filter = tab.dataset.filter;
+
+                // Update active tab
+                document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // Filter cases
+                document.querySelectorAll('.case-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.industry === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>助成金完全ガイド｜FUSION AI for Biz - 法人向け生成AI研修</title>
+    <meta name="description" content="人材開発支援助成金を活用してAI研修を最大75%オフで導入。助成金の申請方法、対象要件、スケジュール、よくある質問まで徹底解説。FUSION AI for Bizなら申請サポートも無料。">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://awef705-glitch.github.io/aixeed-lp/subsidy-guide.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Antique&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bright-green: #66FF00;
+            --bright-green-light: #AAFF00;
+            --bright-green-dark: #4ECC00;
+            --ink-black: #0a0a0a;
+            --ink-dark: #111111;
+            --ink-gray: #1a1a1a;
+            --ink-lighter: #2a2a2a;
+            --paper: #faf8f5;
+            --paper-dark: #e8e4dd;
+            --vermillion: #e63946;
+            --gold: #d4af37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: var(--ink-black);
+            color: var(--paper);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.02;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 0.8rem 2rem;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(102,255,0,0.1);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--paper);
+        }
+
+        .logo-text span {
+            color: var(--bright-green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(250,248,245,0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--bright-green);
+        }
+
+        .cta-nav {
+            background: var(--bright-green);
+            color: var(--ink-black) !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .cta-nav:hover {
+            background: var(--bright-green-light);
+        }
+
+        /* Main Content */
+        .main-wrapper {
+            width: 100%;
+            padding: 0 2rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 0 5rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-label {
+            font-size: 0.8rem;
+            color: var(--bright-green);
+            letter-spacing: 0.3em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .page-title {
+            font-family: 'Shippori Mincho', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .page-desc {
+            color: rgba(250,248,245,0.6);
+            font-size: 1rem;
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(102,255,0,0.1) 0%, transparent 50%), var(--ink-gray);
+            border: 2px solid var(--bright-green);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero-banner h2 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-banner .highlight {
+            color: var(--bright-green);
+            font-size: 3rem;
+            font-weight: 900;
+        }
+
+        .hero-banner p {
+            color: rgba(250,248,245,0.7);
+            font-size: 1rem;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.4rem;
+            color: var(--bright-green);
+            margin-bottom: 2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(102,255,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .section-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(102,255,0,0.1);
+            border-radius: 8px;
+        }
+
+        .section-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--bright-green);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        /* Content Box */
+        .content-box {
+            background: var(--ink-gray);
+            border: 1px solid rgba(102,255,0,0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-box h3 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--paper);
+        }
+
+        .content-box p {
+            font-size: 0.95rem;
+            color: rgba(250,248,245,0.8);
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        .content-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .content-box strong {
+            color: var(--bright-green);
+        }
+
+        /* List */
+        .check-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .check-list li {
+            padding: 0.6rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: rgba(250,248,245,0.8);
+            font-size: 0.95rem;
+        }
+
+        .check-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--bright-green);
+            font-weight: 700;
+        }
+
+        /* Cost Comparison */
+        .cost-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .cost-card {
+            background: var(--ink-gray);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .cost-card.before {
+            border: 1px solid rgba(250,248,245,0.2);
+        }
+
+        .cost-card.after {
+            border: 2px solid var(--bright-green);
+            background: linear-gradient(135deg, rgba(102,255,0,0.05) 0%, transparent 100%), var(--ink-gray);
+        }
+
+        .cost-card h4 {
+            font-size: 0.9rem;
+            color: rgba(250,248,245,0.5);
+            margin-bottom: 1rem;
+        }
+
+        .cost-card.after h4 {
+            color: var(--bright-green);
+        }
+
+        .cost-price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .cost-card.before .cost-price {
+            color: rgba(250,248,245,0.5);
+            text-decoration: line-through;
+        }
+
+        .cost-card.after .cost-price {
+            color: var(--bright-green);
+        }
+
+        .cost-note {
+            font-size: 0.85rem;
+            color: rgba(250,248,245,0.5);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(102,255,0,0.3);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--bright-green);
+            border-radius: 50%;
+        }
+
+        .timeline-item h4 {
+            font-size: 1rem;
+            color: var(--bright-green);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-item .timeline-period {
+            font-size: 0.8rem;
+            color: rgba(250,248,245,0.5);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item p {
+            font-size: 0.95rem;
+            color: rgba(250,248,245,0.8);
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: rgba(230,57,70,0.1);
+            border: 1px solid rgba(230,57,70,0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .warning-box h4 {
+            color: var(--vermillion);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .warning-box p {
+            font-size: 0.9rem;
+            color: rgba(250,248,245,0.8);
+        }
+
+        /* Info Box */
+        .info-box {
+            background: rgba(102,255,0,0.05);
+            border: 1px solid rgba(102,255,0,0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .info-box h4 {
+            color: var(--bright-green);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box p {
+            font-size: 0.9rem;
+            color: rgba(250,248,245,0.8);
+        }
+
+        /* Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(250,248,245,0.1);
+        }
+
+        .data-table th {
+            color: var(--bright-green);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .data-table td {
+            color: rgba(250,248,245,0.8);
+            font-size: 0.95rem;
+        }
+
+        /* CTA */
+        .guide-cta {
+            background: linear-gradient(135deg, var(--ink-gray) 0%, var(--ink-dark) 100%);
+            border: 2px solid var(--bright-green);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .guide-cta h3 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .guide-cta p {
+            color: rgba(250,248,245,0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--bright-green);
+            color: var(--ink-black);
+        }
+
+        .btn-primary:hover {
+            background: var(--bright-green-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102,255,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--paper);
+            border: 1px solid rgba(250,248,245,0.3);
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--bright-green);
+            color: var(--bright-green);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--ink-black);
+            border-top: 1px solid rgba(102,255,0,0.1);
+            padding: 3rem 2rem;
+        }
+
+        .footer-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(250,248,245,0.5);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--bright-green);
+        }
+
+        .footer-copy {
+            text-align: center;
+            color: rgba(250,248,245,0.3);
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .main-wrapper {
+                padding: 0 1rem;
+            }
+
+            main {
+                padding: 6rem 0 3rem;
+            }
+
+            .hero-banner {
+                padding: 2rem 1.5rem;
+            }
+
+            .hero-banner .highlight {
+                font-size: 2.5rem;
+            }
+
+            .cost-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 0.8rem 0.5rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-text"><span>FUSION AI</span> for Biz</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">私たちの強み</a></li>
+                <li><a href="index.html#curriculum">講座の紹介</a></li>
+                <li><a href="index.html#subsidy">助成金の活用</a></li>
+                <li><a href="index.html#pricing">価格</a></li>
+                <li><a href="contact.html" class="cta-nav">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-wrapper">
+        <main>
+            <div class="page-header">
+                <p class="page-label">Subsidy Guide</p>
+                <h1 class="page-title">助成金完全ガイド</h1>
+                <p class="page-desc">人材開発支援助成金を活用して、AI研修を最大75%オフで導入する方法</p>
+            </div>
+
+            <div class="hero-banner">
+                <h2>研修費用が最大</h2>
+                <p class="highlight">75%オフ</p>
+                <p>人材開発支援助成金を活用すれば、<br>年間35万円の研修が実質8.75万円〜で導入可能です。</p>
+            </div>
+
+            <!-- 助成金の概要 -->
+            <section class="section">
+                <h2 class="section-title">
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </span>
+                    人材開発支援助成金とは
+                </h2>
+
+                <div class="content-box">
+                    <h3>厚生労働省の制度を活用</h3>
+                    <p>人材開発支援助成金は、<strong>事業主が従業員に対して職業訓練を実施した場合に、訓練費用の一部を助成する制度</strong>です。</p>
+                    <p>FUSION AI for Bizは「事業展開等リスキリング支援コース」の対象研修として、最大75%の助成を受けることができます。</p>
+                </div>
+
+                <div class="cost-comparison">
+                    <div class="cost-card before">
+                        <h4>通常価格</h4>
+                        <p class="cost-price">¥350,000</p>
+                        <p class="cost-note">1人あたり/年間（税別）</p>
+                    </div>
+                    <div class="cost-card after">
+                        <h4>助成金活用後</h4>
+                        <p class="cost-price">¥87,500〜</p>
+                        <p class="cost-note">実質負担額（最大75%助成時）</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 対象要件 -->
+            <section class="section">
+                <h2 class="section-title">
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                    </span>
+                    対象となる企業の要件
+                </h2>
+
+                <div class="content-box">
+                    <h3>主な要件</h3>
+                    <ul class="check-list">
+                        <li>雇用保険の適用事業所であること</li>
+                        <li>従業員を雇用していること</li>
+                        <li>過去3年間に不正受給がないこと</li>
+                        <li>労働関係法令を遵守していること</li>
+                        <li>労働保険料の滞納がないこと</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h3>助成率について</h3>
+                    <table class="data-table">
+                        <tr>
+                            <th>企業規模</th>
+                            <th>経費助成率</th>
+                            <th>賃金助成（1人1時間）</th>
+                        </tr>
+                        <tr>
+                            <td>中小企業</td>
+                            <td><strong>75%</strong></td>
+                            <td>960円</td>
+                        </tr>
+                        <tr>
+                            <td>大企業</td>
+                            <td><strong>60%</strong></td>
+                            <td>480円</td>
+                        </tr>
+                    </table>
+                    <p style="font-size: 0.85rem; color: rgba(250,248,245,0.5); margin-top: 1rem;">※ 中小企業の定義：製造業等は従業員300人以下または資本金3億円以下、小売業は50人以下または5,000万円以下など、業種により異なります。</p>
+                </div>
+
+                <div class="info-box">
+                    <h4>FUSION AI for Bizなら適用可否を無料診断</h4>
+                    <p>初回相談時に、御社が助成金の対象となるか無料で診断いたします。必要書類や申請スケジュールもその場でご案内します。</p>
+                </div>
+            </section>
+
+            <!-- 申請の流れ -->
+            <section class="section">
+                <h2 class="section-title">
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </span>
+                    申請から受給までの流れ
+                </h2>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>STEP 1：お問い合わせ・無料診断</h4>
+                        <p class="timeline-period">研修開始2ヶ月前まで</p>
+                        <p>まずはお問い合わせください。御社の要件を確認し、助成金の適用可否を診断します。同時に、最適な研修スケジュールをご提案します。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>STEP 2：計画届の提出</h4>
+                        <p class="timeline-period">研修開始1ヶ月前まで</p>
+                        <p>訓練実施計画届を労働局に提出します。必要書類の準備は弊社がサポートいたします。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>STEP 3：研修の実施</h4>
+                        <p class="timeline-period">計画届認定後</p>
+                        <p>FUSION AI for Bizの研修を実施します。eラーニング受講とワークショップ参加の記録を管理します。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>STEP 4：支給申請</h4>
+                        <p class="timeline-period">研修終了後2ヶ月以内</p>
+                        <p>研修終了後、支給申請書類を作成・提出します。申請書類の作成も弊社がサポートいたします。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>STEP 5：助成金受給</h4>
+                        <p class="timeline-period">申請後3〜6ヶ月</p>
+                        <p>審査完了後、助成金が指定口座に振り込まれます。</p>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠ 重要：事前申請が必要です</h4>
+                    <p>助成金は<strong>研修開始の1ヶ月前まで</strong>に計画届を提出する必要があります。研修開始後の申請はできませんのでご注意ください。早めのお問い合わせをおすすめします。</p>
+                </div>
+            </section>
+
+            <!-- 必要書類 -->
+            <section class="section">
+                <h2 class="section-title">
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    </span>
+                    必要書類
+                </h2>
+
+                <div class="content-box">
+                    <h3>計画届提出時に必要な書類</h3>
+                    <ul class="check-list">
+                        <li>訓練実施計画届</li>
+                        <li>年間職業能力開発計画</li>
+                        <li>訓練カリキュラム（弊社が提供）</li>
+                        <li>対象労働者の一覧</li>
+                        <li>雇用契約書または労働条件通知書の写し</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h3>支給申請時に必要な書類</h3>
+                    <ul class="check-list">
+                        <li>支給申請書</li>
+                        <li>賃金台帳・出勤簿の写し</li>
+                        <li>訓練日誌・受講記録</li>
+                        <li>経費の領収書・振込明細</li>
+                        <li>修了証明書</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>書類作成はすべてサポートします</h4>
+                    <p>書類の準備・作成は複雑に感じるかもしれませんが、ご安心ください。弊社が提携社労士と連携し、すべての書類作成をサポートいたします。お客様の負担を最小限に抑えます。</p>
+                </div>
+            </section>
+
+            <!-- よくある質問 -->
+            <section class="section">
+                <h2 class="section-title">
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </span>
+                    よくある質問
+                </h2>
+
+                <div class="content-box">
+                    <h3>Q. 申請から受給までどのくらいかかりますか？</h3>
+                    <p>研修終了後、支給申請から<strong>3〜6ヶ月程度</strong>で助成金が振り込まれます。ただし、申請時期や労働局の審査状況により前後する場合があります。</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>Q. 助成金が不支給になることはありますか？</h3>
+                    <p>以下の場合、不支給となる可能性があります：</p>
+                    <ul class="check-list">
+                        <li>計画届が研修開始1ヶ月前までに提出されていない</li>
+                        <li>受講記録・出勤記録に不備がある</li>
+                        <li>労働関係法令に違反している</li>
+                        <li>申請書類に虚偽の記載がある</li>
+                    </ul>
+                    <p style="margin-top: 1rem;">弊社のサポートを活用いただければ、これらのリスクを最小限に抑えることができます。</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>Q. 他の助成金と併用できますか？</h3>
+                    <p>同一の訓練に対して複数の助成金を受給することは原則できません。ただし、異なる訓練であれば他の助成金と組み合わせることが可能な場合があります。詳しくはご相談ください。</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>Q. 申請は自社で行う必要がありますか？</h3>
+                    <p>はい、申請は企業様名義で行う必要があります。ただし、<strong>書類作成や手続きのサポートは弊社がすべて行います</strong>ので、実質的な負担は最小限です。</p>
+                </div>
+            </section>
+
+            <div class="guide-cta">
+                <h3>助成金について相談する</h3>
+                <p>御社が助成金の対象となるか、無料で診断いたします。<br>まずはお気軽にお問い合わせください。</p>
+                <a href="contact.html" class="btn btn-primary">無料相談を予約</a>
+                <a href="download.html" class="btn btn-secondary">資料ダウンロード</a>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="index.html">トップ</a>
+                <a href="about.html">会社概要</a>
+                <a href="cases.html">導入事例</a>
+                <a href="faq.html">よくある質問</a>
+                <a href="privacy.html">プライバシーポリシー</a>
+                <a href="tokushoho.html">特定商取引法に基づく表記</a>
+                <a href="contact.html">お問い合わせ</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Aixeed Inc. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

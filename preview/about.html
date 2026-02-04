@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会社概要・AI仙人プロフィール｜FUSION AI for Biz - 法人向け生成AI研修</title>
+    <meta name="description"
+        content="FUSION AI for Bizを運営するAixeed株式会社の会社概要と、監修者「AI仙人」のプロフィール。YouTubeで話題のAI仙人が監修する、本格的な法人向け生成AI研修。">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://awef705-glitch.github.io/aixeed-lp/about.html">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Aixeed株式会社",
+        "url": "https://aixeed.co.jp",
+        "description": "法人向け生成AI研修「FUSION AI for Biz」を提供。AI仙人監修による実践的なAI研修で、企業のAIネイティブ化を支援。"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Zen+Antique&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bright-green: #68c888;
+            --bright-green-light: #bfe8d1;
+            --bright-green-dark: #3f9d6d;
+            --brand-blue: #4088d0;
+
+            --ink-black: #f7f8f6;
+            --ink-dark: #eef2ed;
+            --ink-gray: #ffffff;
+            --ink-lighter: #f3f5f1;
+            --paper: #1b1b1b;
+            --paper-dark: #0f0f0f;
+
+            --vermillion: #e35a52;
+            --gold: #4088d0;
+            --mist: rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: var(--ink-black);
+            color: var(--paper);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.02;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 0.8rem 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(104, 200, 136, 0.1);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--paper);
+        }
+
+        .logo-text span {
+            color: var(--bright-green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(27, 27, 27, 0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--bright-green);
+        }
+
+        .cta-nav {
+            background: var(--bright-green);
+            color: var(--paper-dark) !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .cta-nav:hover {
+            background: var(--bright-green-light);
+        }
+
+        /* Main Content */
+        .main-wrapper {
+            width: 100%;
+            padding: 0 2rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 0 5rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-label {
+            font-size: 0.8rem;
+            color: var(--bright-green);
+            letter-spacing: 0.3em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .page-title {
+            font-family: 'Shippori Mincho', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .page-desc {
+            color: rgba(27, 27, 27, 0.6);
+            font-size: 1rem;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.5rem;
+            color: var(--bright-green);
+            margin-bottom: 2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(104, 200, 136, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .section-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(104, 200, 136, 0.1);
+            border-radius: 8px;
+        }
+
+        .section-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--bright-green);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        /* AI Sennin Profile */
+        .profile-hero {
+            background: linear-gradient(135deg, var(--ink-gray) 0%, var(--ink-dark) 100%);
+            border: 1px solid rgba(104, 200, 136, 0.2);
+            border-radius: 16px;
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: minmax(0, 340px) 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .profile-visuals {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .profile-photo {
+            aspect-ratio: 3 / 4;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(104, 200, 136, 0.55) 0%, rgba(64, 136, 208, 0.45) 75%);
+            border: 1px solid rgba(104, 200, 136, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-photo::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0.4) 100%);
+        }
+
+        .profile-photo span {
+            position: absolute;
+            left: 0.8rem;
+            bottom: 0.8rem;
+            z-index: 1;
+            font-size: 0.85rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .profile-content h3 {
+            font-family: 'Zen Antique', serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-role {
+            color: var(--bright-green);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-content p {
+            color: rgba(27, 27, 27, 0.8);
+            font-size: 1rem;
+            line-height: 2;
+            margin-bottom: 1rem;
+        }
+
+        .profile-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--bright-green);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: rgba(27, 27, 27, 0.5);
+        }
+
+        /* Profile Details */
+        .profile-details {
+            background: var(--ink-gray);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .profile-details h4 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.1rem;
+            color: var(--bright-green);
+            margin-bottom: 1rem;
+        }
+
+        .profile-details p {
+            color: rgba(27, 27, 27, 0.8);
+            font-size: 0.95rem;
+            line-height: 2;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-details p:last-child {
+            margin-bottom: 0;
+        }
+
+        .achievement-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .achievement-list li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(27, 27, 27, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: rgba(27, 27, 27, 0.8);
+            font-size: 0.95rem;
+        }
+
+        .achievement-list li:last-child {
+            border-bottom: none;
+        }
+
+        .achievement-list li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--bright-green);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* Company Info Table */
+        .company-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .company-table tr {
+            border-bottom: 1px solid rgba(27, 27, 27, 0.1);
+        }
+
+        .company-table th {
+            width: 140px;
+            padding: 1.2rem 1rem;
+            text-align: left;
+            font-weight: 500;
+            color: var(--bright-green);
+            font-size: 0.9rem;
+            vertical-align: top;
+        }
+
+        .company-table td {
+            padding: 1.2rem 1rem;
+            color: rgba(27, 27, 27, 0.8);
+            font-size: 0.95rem;
+        }
+
+        .company-table td a {
+            color: var(--bright-green);
+            text-decoration: none;
+        }
+
+        .company-table td a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mission / Vision */
+        .mission-box {
+            background: linear-gradient(135deg, rgba(104, 200, 136, 0.05) 0%, transparent 50%), var(--ink-gray);
+            border: 1px solid rgba(104, 200, 136, 0.2);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-box h4 {
+            font-size: 0.85rem;
+            color: var(--bright-green);
+            letter-spacing: 0.2em;
+            margin-bottom: 1rem;
+        }
+
+        .mission-box p {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+
+        .mission-box .desc {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.95rem;
+            color: rgba(27, 27, 27, 0.7);
+            margin-top: 1rem;
+        }
+
+        /* CTA */
+        .about-cta {
+            background: linear-gradient(135deg, var(--ink-gray) 0%, var(--ink-dark) 100%);
+            border: 2px solid var(--bright-green);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .about-cta h3 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-cta p {
+            color: rgba(27, 27, 27, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--bright-green);
+            color: var(--paper-dark);
+        }
+
+        .btn-primary:hover {
+            background: var(--bright-green-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(104, 200, 136, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--paper);
+            border: 1px solid rgba(27, 27, 27, 0.3);
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--bright-green);
+            color: var(--bright-green);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--ink-black);
+            border-top: 1px solid rgba(104, 200, 136, 0.1);
+            padding: 3rem 2rem;
+        }
+
+        .footer-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(27, 27, 27, 0.5);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--bright-green);
+        }
+
+        .footer-copy {
+            text-align: center;
+            color: rgba(27, 27, 27, 0.3);
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .main-wrapper {
+                padding: 0 1rem;
+            }
+
+            main {
+                padding: 6rem 0 3rem;
+            }
+
+            .profile-hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 2rem;
+                gap: 2rem;
+            }
+
+            .profile-visuals {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-stats {
+                justify-content: center;
+            }
+
+            .company-table th {
+                width: 100px;
+                padding: 1rem 0.5rem;
+            }
+
+            .company-table td {
+                padding: 1rem 0.5rem;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-text"><span>FUSION AI</span> for Biz</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">私たちの強み</a></li>
+                <li><a href="index.html#curriculum">講座の紹介</a></li>
+                <li><a href="index.html#subsidy">助成金の活用</a></li>
+                <li><a href="index.html#pricing">価格</a></li>
+                <li><a href="contact.html" class="cta-nav">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-wrapper">
+        <main>
+            <div class="page-header">
+                <p class="page-label">About</p>
+                <h1 class="page-title">会社概要・監修者紹介</h1>
+                <p class="page-desc">FUSION AI for Bizを運営するAixeed株式会社と、監修者AI仙人のご紹介</p>
+            </div>
+
+            <!-- AI仙人プロフィール -->
+            <section class="section">
+                <h2 class="section-title">
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>
+                    </span>
+                    監修者プロフィール
+                </h2>
+
+                <div class="profile-hero">
+                    <div class="profile-visuals">
+                        <div class="profile-photo"><span>お面付き（YouTube）</span></div>
+                        <div class="profile-photo"><span>ビジネスライク写真</span></div>
+                    </div>
+                    <div class="profile-content">
+                        <h3>AI仙人</h3>
+                        <p class="profile-role">FUSION AI for Biz 監修</p>
+                        <p>YouTubeチャンネル「AI仙人」を運営し、生成AIの最新情報や実践的な活用テクニックを発信。企業のAI導入支援から個人のスキルアップまで、幅広い層に向けてAIとの「融合」を伝える。
+                        </p>
+                        <p>「AIを使う」から「AIと融合する」へ。社員一人ひとりが自分のAI分身を持ち、人間とAIが協調して価値を生み出す未来を提唱している。</p>
+                        <div class="profile-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">10万+</span>
+                                <span class="stat-label">YouTubeチャンネル登録者</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">公開動画本数</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">100+</span>
+                                <span class="stat-label">法人研修実績</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-details">
+                    <h4>AI仙人の想い</h4>
+                    <p>「AIに仕事を奪われる」のではなく、「AIと融合して価値を創る」時代が来ています。私は、すべてのビジネスパーソンが自分のAI分身を持ち、創造的な仕事に集中できる世界を実現したいと考えています。
+                    </p>
+                    <p>FUSION AI for Bizは、単なるツールの使い方講座ではありません。社員一人ひとりが「AIネイティブ」になり、3年後・5年後も選ばれる人材・企業になるための実践的なプログラムです。
+                    </p>
+
+                    <h4 style="margin-top: 2rem;">実績・活動</h4>
+                    <ul class="achievement-list">
+                        <li>YouTubeチャンネル「AI仙人」運営（登録者10万人超）</li>
+                        <li>大手企業向けAI研修・コンサルティング</li>
+                        <li>生成AI関連書籍の執筆・監修</li>
+                        <li>AI活用セミナー・講演多数</li>
+                        <li>企業向けAIエージェント開発支援</li>
+                    </ul>
+
+                    <h4 style="margin-top: 2rem;">主な経歴</h4>
+                    <ul class="achievement-list">
+                        <li>20xx年 ○○大学卒</li>
+                        <li>20xx年 IT企業にてエンジニアとして従事</li>
+                        <li>20xx年 独立し、AI活用支援事業を開始</li>
+                        <li>2023年 YouTubeチャンネル「AI仙人」開設</li>
+                        <li>2024年 Aixeed株式会社 顧問就任</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ミッション・ビジョン -->
+            <section class="section">
+                <h2 class="section-title">
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                        </svg>
+                    </span>
+                    ミッション・ビジョン
+                </h2>
+
+                <div class="mission-box">
+                    <h4>MISSION</h4>
+                    <p>AIとの融合で、すべてのビジネスパーソンが<br>創造的な仕事に集中できる世界を創る</p>
+                    <p class="desc">私たちは、AIを「ツール」としてではなく「パートナー」として捉え、人間とAIが協調して新しい価値を生み出す未来を目指しています。</p>
+                </div>
+
+                <div class="mission-box">
+                    <h4>VISION</h4>
+                    <p>2030年、すべての企業が<br>AIネイティブ企業になる</p>
+                    <p class="desc">社員一人ひとりが自分のAI分身を持ち、労働集約型から脱却した企業が当たり前になる。そんな未来を、FUSION AI for Bizから始めます。</p>
+                </div>
+            </section>
+
+            <!-- 会社概要 -->
+            <section class="section">
+                <h2 class="section-title">
+                    <span class="section-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            <polyline points="9 22 9 12 15 12 15 22" />
+                        </svg>
+                    </span>
+                    会社概要
+                </h2>
+
+                <table class="company-table">
+                    <tr>
+                        <th>会社名</th>
+                        <td>Aixeed株式会社</td>
+                    </tr>
+                    <tr>
+                        <th>代表者</th>
+                        <td>代表取締役 [代表者名]</td>
+                    </tr>
+                    <tr>
+                        <th>設立</th>
+                        <td>2024年</td>
+                    </tr>
+                    <tr>
+                        <th>所在地</th>
+                        <td>〒150-0000<br>東京都渋谷区[住所]</td>
+                    </tr>
+                    <tr>
+                        <th>事業内容</th>
+                        <td>
+                            ・法人向け生成AI研修サービス「FUSION AI for Biz」の運営<br>
+                            ・AIコンサルティング<br>
+                            ・AIエージェント開発支援<br>
+                            ・AI関連コンテンツ制作
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>メール</th>
+                        <td><a href="mailto:info@aixeed.co.jp">info@aixeed.co.jp</a></td>
+                    </tr>
+                    <tr>
+                        <th>URL</th>
+                        <td><a href="https://aixeed.co.jp" target="_blank" rel="noopener">https://aixeed.co.jp</a></td>
+                    </tr>
+                </table>
+            </section>
+
+            <div class="about-cta">
+                <h3>AIネイティブ企業への第一歩を</h3>
+                <p>AI仙人監修の研修プログラムで、<br>御社のAI活用を加速させませんか？</p>
+                <a href="contact.html" class="btn btn-primary">お問い合わせ</a>
+                <a href="download.html" class="btn btn-secondary">資料ダウンロード</a>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="index.html">トップ</a>
+                <a href="about.html">会社概要</a>
+                <a href="cases.html">導入事例</a>
+                <a href="faq.html">よくある質問</a>
+                <a href="privacy.html">プライバシーポリシー</a>
+                <a href="tokushoho.html">特定商取引法に基づく表記</a>
+                <a href="contact.html">お問い合わせ</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Aixeed Inc. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

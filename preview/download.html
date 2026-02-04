@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資料ダウンロード｜FUSION AI for Biz - 法人向け生成AI研修</title>
+    <meta name="description" content="FUSION AI for Bizのサービス資料、カリキュラム詳細、助成金活用ガイドなど、各種資料をダウンロードいただけます。無料でご請求ください。">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://awef705-glitch.github.io/aixeed-lp/download.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Antique&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bright-green: #66FF00;
+            --bright-green-light: #AAFF00;
+            --bright-green-dark: #4ECC00;
+            --ink-black: #0a0a0a;
+            --ink-dark: #111111;
+            --ink-gray: #1a1a1a;
+            --ink-lighter: #2a2a2a;
+            --paper: #faf8f5;
+            --paper-dark: #e8e4dd;
+            --vermillion: #e63946;
+            --gold: #d4af37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: var(--ink-black);
+            color: var(--paper);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.02;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 0.8rem 2rem;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(102,255,0,0.1);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--paper);
+        }
+
+        .logo-text span {
+            color: var(--bright-green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(250,248,245,0.8);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--bright-green);
+        }
+
+        .cta-nav {
+            background: var(--bright-green);
+            color: var(--ink-black) !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .cta-nav:hover {
+            background: var(--bright-green-light);
+        }
+
+        /* Main Content */
+        .main-wrapper {
+            width: 100%;
+            padding: 0 2rem;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 8rem 0 5rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-label {
+            font-size: 0.8rem;
+            color: var(--bright-green);
+            letter-spacing: 0.3em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .page-title {
+            font-family: 'Shippori Mincho', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .page-desc {
+            color: rgba(250,248,245,0.6);
+            font-size: 1rem;
+        }
+
+        /* Download Layout */
+        .download-layout {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* Document Cards */
+        .documents-section h2 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.3rem;
+            color: var(--bright-green);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(102,255,0,0.2);
+        }
+
+        .document-card {
+            background: var(--ink-gray);
+            border: 1px solid rgba(102,255,0,0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            transition: all 0.3s;
+        }
+
+        .document-card:hover {
+            border-color: rgba(102,255,0,0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .document-icon {
+            width: 60px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--ink-lighter) 0%, var(--ink-dark) 100%);
+            border: 1px solid rgba(102,255,0,0.2);
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .document-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--bright-green);
+            fill: none;
+            stroke-width: 1.5;
+            margin-bottom: 4px;
+        }
+
+        .document-icon span {
+            font-size: 0.65rem;
+            color: var(--bright-green);
+            font-weight: 700;
+        }
+
+        .document-content {
+            flex: 1;
+        }
+
+        .document-content h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            color: var(--paper);
+        }
+
+        .document-content p {
+            font-size: 0.85rem;
+            color: rgba(250,248,245,0.6);
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+
+        .document-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.75rem;
+            color: rgba(250,248,245,0.4);
+        }
+
+        .document-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* Featured Document */
+        .featured-document {
+            background: linear-gradient(135deg, rgba(102,255,0,0.1) 0%, transparent 50%), var(--ink-gray);
+            border: 2px solid var(--bright-green);
+            position: relative;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: var(--bright-green);
+            color: var(--ink-black);
+            padding: 0.3rem 0.8rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            border-radius: 50px;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: var(--ink-gray);
+            border: 1px solid rgba(102,255,0,0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            position: sticky;
+            top: 100px;
+        }
+
+        .form-section h2 {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-section .form-desc {
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(250,248,245,0.6);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+            color: rgba(250,248,245,0.8);
+        }
+
+        .form-group label .required {
+            color: var(--vermillion);
+            font-size: 0.75rem;
+            margin-left: 0.3rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: var(--ink-dark);
+            border: 1px solid rgba(250,248,245,0.2);
+            border-radius: 6px;
+            color: var(--paper);
+            font-size: 0.95rem;
+            font-family: 'Noto Sans JP', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--bright-green);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(250,248,245,0.3);
+        }
+
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2366FF00' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            accent-color: var(--bright-green);
+            flex-shrink: 0;
+        }
+
+        .checkbox-group label {
+            font-size: 0.8rem;
+            color: rgba(250,248,245,0.7);
+            line-height: 1.5;
+        }
+
+        .checkbox-group label a {
+            color: var(--bright-green);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            background: var(--bright-green);
+            color: var(--ink-black);
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .btn-submit:hover {
+            background: var(--bright-green-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102,255,0,0.3);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 0.75rem;
+            color: rgba(250,248,245,0.4);
+            margin-top: 1rem;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(102,255,0,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .success-icon svg {
+            width: 30px;
+            height: 30px;
+            stroke: var(--bright-green);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .success-message h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--bright-green);
+        }
+
+        .success-message p {
+            font-size: 0.9rem;
+            color: rgba(250,248,245,0.7);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--ink-black);
+            border-top: 1px solid rgba(102,255,0,0.1);
+            padding: 3rem 2rem;
+        }
+
+        .footer-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(250,248,245,0.5);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--bright-green);
+        }
+
+        .footer-copy {
+            text-align: center;
+            color: rgba(250,248,245,0.3);
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .download-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .form-section {
+                position: static;
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .main-wrapper {
+                padding: 0 1rem;
+            }
+
+            main {
+                padding: 6rem 0 3rem;
+            }
+
+            .document-card {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .document-icon {
+                width: 100%;
+                height: auto;
+                flex-direction: row;
+                padding: 0.8rem;
+                gap: 0.5rem;
+            }
+
+            .document-icon svg {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-text"><span>FUSION AI</span> for Biz</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">私たちの強み</a></li>
+                <li><a href="index.html#curriculum">講座の紹介</a></li>
+                <li><a href="index.html#subsidy">助成金の活用</a></li>
+                <li><a href="index.html#pricing">価格</a></li>
+                <li><a href="contact.html" class="cta-nav">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-wrapper">
+        <main>
+            <div class="page-header">
+                <p class="page-label">Download</p>
+                <h1 class="page-title">資料ダウンロード</h1>
+                <p class="page-desc">FUSION AI for Bizの詳細資料を無料でダウンロードいただけます</p>
+            </div>
+
+            <div class="download-layout">
+                <div class="documents-section">
+                    <h2>ダウンロード可能な資料</h2>
+
+                    <div class="document-card featured-document">
+                        <span class="featured-badge">おすすめ</span>
+                        <div class="document-icon">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            <span>PDF</span>
+                        </div>
+                        <div class="document-content">
+                            <h3>FUSION AI for Biz サービス資料</h3>
+                            <p>サービス概要、カリキュラム、料金、導入フローをまとめた総合資料です。社内稟議にもご活用いただけます。</p>
+                            <div class="document-meta">
+                                <span>📄 全20ページ</span>
+                                <span>📦 約3.5MB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            <span>PDF</span>
+                        </div>
+                        <div class="document-content">
+                            <h3>カリキュラム詳細</h3>
+                            <p>12時間超の研修カリキュラムの詳細内容、各講義のゴール、習得できるスキルをまとめた資料です。</p>
+                            <div class="document-meta">
+                                <span>📄 全12ページ</span>
+                                <span>📦 約2.0MB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            <span>PDF</span>
+                        </div>
+                        <div class="document-content">
+                            <h3>助成金活用ガイド</h3>
+                            <p>人材開発支援助成金の概要、申請方法、スケジュール、必要書類をまとめた実用的なガイドです。</p>
+                            <div class="document-meta">
+                                <span>📄 全8ページ</span>
+                                <span>📦 約1.5MB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            <span>PDF</span>
+                        </div>
+                        <div class="document-content">
+                            <h3>導入事例集</h3>
+                            <p>製造業、IT、サービス業など、業種別の導入事例と成果をまとめた事例集です。</p>
+                            <div class="document-meta">
+                                <span>📄 全15ページ</span>
+                                <span>📦 約2.5MB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                            <span>XLSX</span>
+                        </div>
+                        <div class="document-content">
+                            <h3>ROI計算シート</h3>
+                            <p>研修導入による削減工数・コスト削減効果を試算できるExcelシートです。稟議資料の作成にご活用ください。</p>
+                            <div class="document-meta">
+                                <span>📄 Excel形式</span>
+                                <span>📦 約0.5MB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h2>無料でダウンロード</h2>
+                    <p class="form-desc">以下のフォームにご入力ください</p>
+
+                    <form id="downloadForm">
+                        <div class="form-group">
+                            <label>会社名<span class="required">*必須</span></label>
+                            <input type="text" name="company" placeholder="例：株式会社サンプル" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>お名前<span class="required">*必須</span></label>
+                            <input type="text" name="name" placeholder="例：山田 太郎" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>メールアドレス<span class="required">*必須</span></label>
+                            <input type="email" name="email" placeholder="例：yamada@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>電話番号</label>
+                            <input type="tel" name="tel" placeholder="例：03-1234-5678">
+                        </div>
+
+                        <div class="form-group">
+                            <label>従業員数</label>
+                            <select name="employees">
+                                <option value="">選択してください</option>
+                                <option value="1-50">1〜50名</option>
+                                <option value="51-100">51〜100名</option>
+                                <option value="101-300">101〜300名</option>
+                                <option value="301-1000">301〜1000名</option>
+                                <option value="1001+">1001名以上</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>ご希望の資料<span class="required">*必須</span></label>
+                            <select name="document" required>
+                                <option value="">選択してください</option>
+                                <option value="all">すべての資料</option>
+                                <option value="service">サービス資料のみ</option>
+                                <option value="curriculum">カリキュラム詳細のみ</option>
+                                <option value="subsidy">助成金活用ガイドのみ</option>
+                            </select>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agree" name="agree" required>
+                            <label for="agree"><a href="privacy.html" target="_blank">プライバシーポリシー</a>に同意の上、送信します。</label>
+                        </div>
+
+                        <button type="submit" class="btn-submit">資料をダウンロードする</button>
+
+                        <p class="form-note">※ ご入力いただいたメールアドレスに<br>ダウンロードリンクをお送りします</p>
+                    </form>
+
+                    <div class="success-message" id="successMessage">
+                        <div class="success-icon">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <h3>送信完了</h3>
+                        <p>ご入力いただいたメールアドレスに<br>ダウンロードリンクをお送りしました。</p>
+                        <p style="margin-top: 1rem; font-size: 0.8rem;">※ 数分経ってもメールが届かない場合は、<br>迷惑メールフォルダをご確認ください。</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="index.html">トップ</a>
+                <a href="about.html">会社概要</a>
+                <a href="cases.html">導入事例</a>
+                <a href="faq.html">よくある質問</a>
+                <a href="privacy.html">プライバシーポリシー</a>
+                <a href="tokushoho.html">特定商取引法に基づく表記</a>
+                <a href="contact.html">お問い合わせ</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Aixeed Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('downloadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Hide form, show success message
+            this.style.display = 'none';
+            document.getElementById('successMessage').classList.add('show');
+
+            // In production, you would send the form data to your server here
+            // Example: fetch('/api/download', { method: 'POST', body: new FormData(this) })
+        });
+    </script>
+</body>
+</html>
